@@ -1,0 +1,311 @@
+<?php
+
+namespace Database\Seeders;
+
+use Illuminate\Database\Seeder;
+
+class FuncionalidadesTableSeeder extends Seeder
+{
+
+    /**
+     * Auto generated seed file
+     *
+     * @return void
+     */
+    public function run()
+    {
+        
+
+        \DB::table('funcionalidades')->delete();
+        
+        \DB::table('funcionalidades')->insert(array (
+            0 => 
+            array (
+                'id' => 1,
+                'titulo' => 'Modulos',
+                'ruta' => 'modulos',
+                'accion' => 'index',
+                'orden' => 1,
+                'visible_menu' => 1,
+                'modulo_id' => 1,
+                'activo' => 1,
+                'eliminado' => 0,
+
+            ),
+            1 => 
+            array (
+                'id' => 2,
+                'titulo' => 'Funcionalidades',
+                'ruta' => 'funcionalidades',
+                'accion' => 'index',
+                'orden' => 2,
+                'visible_menu' => 1,
+                'modulo_id' => 1,
+                'activo' => 1,
+                'eliminado' => 0,
+
+            ),
+     /*        2 => 
+            array (
+                'id' => 3,
+                'titulo' => 'Areas de Conocimientos',
+                'ruta' => 'areas_conocimientos',
+                'accion' => 'index',
+                'orden' => 1,
+                'visible_menu' => 1,
+                'modulo_id' => 2,
+                'activo' => 1,
+                'eliminado' => 0,
+                'created_at' => '2020-12-28 12:32:00',
+                'updated_at' => NULL,
+            ),
+            3 => 
+            array (
+                'id' => 4,
+                'titulo' => 'Turnos',
+                'ruta' => 'turnos',
+                'accion' => 'index',
+                'orden' => 2,
+                'visible_menu' => 1,
+                'modulo_id' => 2,
+                'activo' => 1,
+                'eliminado' => 0,
+                'created_at' => '2020-02-07 08:12:00',
+                'updated_at' => NULL,
+            ),
+            4 => 
+            array (
+                'id' => 5,
+                'titulo' => 'Aulas',
+                'ruta' => 'aulas',
+                'accion' => 'index',
+                'orden' => 2,
+                'visible_menu' => 1,
+                'modulo_id' => 2,
+                'activo' => 1,
+                'eliminado' => 0,
+                'created_at' => '2020-02-07 08:13:00',
+                'updated_at' => NULL,
+            ), */
+            5 => 
+            array (
+                'id' => 6,
+                'titulo' => 'Personas',
+                'ruta' => 'personas',
+                'accion' => 'index',
+                'orden' => 2,
+                'visible_menu' => 1,
+                'modulo_id' => 1,
+                'activo' => 1,
+                'eliminado' => 0,
+            ),
+           /*  6 => 
+            array (
+                'id' => 7,
+                'titulo' => 'Niveles',
+                'ruta' => 'niveles',
+                'accion' => 'index',
+                'orden' => 2,
+                'visible_menu' => 1,
+                'modulo_id' => 2,
+                'activo' => 1,
+                'eliminado' => 0,
+                'created_at' => '2020-02-07 08:13:00',
+                'updated_at' => NULL,
+            ),
+            7 => 
+            array (
+                'id' => 8,
+                'titulo' => 'Horas',
+                'ruta' => 'horas',
+                'accion' => 'index',
+                'orden' => 2,
+                'visible_menu' => 1,
+                'modulo_id' => 2,
+                'activo' => 1,
+                'eliminado' => 0,
+                'created_at' => '2020-02-07 08:13:00',
+                'updated_at' => NULL,
+            ),
+            8 => 
+            array (
+                'id' => 9,
+                'titulo' => 'Materias',
+                'ruta' => 'materias',
+                'accion' => 'index',
+                'orden' => 2,
+                'visible_menu' => 1,
+                'modulo_id' => 2,
+                'activo' => 1,
+                'eliminado' => 0,
+                'created_at' => '2020-02-07 08:13:00',
+                'updated_at' => NULL,
+            ),
+            9 => 
+            array (
+                'id' => 10,
+                'titulo' => 'Grados',
+                'ruta' => 'grados',
+                'accion' => 'index',
+                'orden' => 2,
+                'visible_menu' => 1,
+                'modulo_id' => 2,
+                'activo' => 1,
+                'eliminado' => 0,
+                'created_at' => '2020-02-07 08:13:00',
+                'updated_at' => NULL,
+            ),
+            10 => 
+            array (
+                'id' => 12,
+                'titulo' => 'Periodos',
+                'ruta' => 'periodos',
+                'accion' => 'index',
+                'orden' => 2,
+                'visible_menu' => 1,
+                'modulo_id' => 2,
+                'activo' => 1,
+                'eliminado' => 0,
+                'created_at' => '2021-05-15 21:15:03',
+                'updated_at' => NULL,
+            ), */
+            11 => 
+            array (
+                'id' => 13,
+                'titulo' => 'Perfiles',
+                'ruta' => 'perfiles',
+                'accion' => 'index',
+                'orden' => 2,
+                'visible_menu' => 1,
+                'modulo_id' => 1,
+                'activo' => 1,
+                'eliminado' => 0,
+            ),
+/*             12 => 
+            array (
+                'id' => 14,
+                'titulo' => 'Gestiones',
+                'ruta' => 'gestiones',
+                'accion' => 'index',
+                'orden' => 2,
+                'visible_menu' => 1,
+                'modulo_id' => 2,
+                'activo' => 1,
+                'eliminado' => 0,
+                'created_at' => '2021-02-20 16:50:02',
+                'updated_at' => '2021-02-20 16:50:15',
+            ), */
+            13 => 
+            array (
+                'id' => 15,
+                'titulo' => 'Usuarios',
+                'ruta' => 'usuarios',
+                'accion' => 'index',
+                'orden' => 2,
+                'visible_menu' => 1,
+                'modulo_id' => 1,
+                'activo' => 1,
+                'eliminado' => 0,
+
+            ),
+            14 => 
+            array (
+                'id' => 16,
+                'titulo' => 'Docentes',
+                'ruta' => 'docentes',
+                'accion' => 'index',
+                'orden' => 2,
+                'visible_menu' => 1,
+                'modulo_id' => 2,
+                'activo' => 1,
+                'eliminado' => 0,
+
+            ),
+            15 => 
+            array (
+                'id' => 17,
+                'titulo' => 'Estudiantes',
+                'ruta' => 'estudiantes',
+                'accion' => 'index',
+                'orden' => 2,
+                'visible_menu' => 1,
+                'modulo_id' => 2,
+                'activo' => 1,
+                'eliminado' => 0,
+
+            ),
+/*             16 => 
+            array (
+                'id' => 18,
+                'titulo' => 'Grupos',
+                'ruta' => 'grupos',
+                'accion' => 'index',
+                'orden' => 2,
+                'visible_menu' => 1,
+                'modulo_id' => 2,
+                'activo' => 1,
+                'eliminado' => 0,
+                'created_at' => '2021-02-18 22:56:59',
+                'updated_at' => '2021-03-09 17:32:08',
+            ),
+            17 => 
+            array (
+                'id' => 19,
+                'titulo' => 'Matriculas',
+                'ruta' => 'matriculas',
+                'accion' => 'index',
+                'orden' => 2,
+                'visible_menu' => 1,
+                'modulo_id' => 3,
+                'activo' => 1,
+                'eliminado' => 0,
+                'created_at' => '2021-02-18 22:56:59',
+                'updated_at' => NULL,
+            ),
+            18 => 
+            array (
+                'id' => 20,
+                'titulo' => 'Rep. Inscritos',
+                'ruta' => 'rep_inscritos',
+                'accion' => 'index',
+                'orden' => 2,
+                'visible_menu' => 1,
+                'modulo_id' => 4,
+                'activo' => 1,
+                'eliminado' => 0,
+                'created_at' => '2021-02-18 22:56:59',
+                'updated_at' => NULL,
+            ),
+            19 => 
+            array (
+                'id' => 21,
+                'titulo' => 'Rep. Notas',
+                'ruta' => 'rep_notas',
+                'accion' => 'index',
+                'orden' => 2,
+                'visible_menu' => 1,
+                'modulo_id' => 4,
+                'activo' => 1,
+                'eliminado' => 0,
+                'created_at' => '2021-02-18 22:56:59',
+                'updated_at' => NULL,
+            ),
+            20 => 
+            array (
+                'id' => 22,
+                'titulo' => 'Mensualidades',
+                'ruta' => 'mensualidades',
+                'accion' => 'index',
+                'orden' => 2,
+                'visible_menu' => 1,
+                'modulo_id' => 3,
+                'activo' => 1,
+                'eliminado' => 0,
+                'created_at' => '2021-02-18 22:56:59',
+                'updated_at' => NULL,
+            ), */
+        ));
+        
+        
+    }
+}
