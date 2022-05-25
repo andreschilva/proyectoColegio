@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Persona;
 use Illuminate\Database\Seeder;
+use Illuminate\Support\Facades\DB;
 
 class PersonasTableSeeder extends Seeder
 {
@@ -16,8 +17,29 @@ class PersonasTableSeeder extends Seeder
     public function run()
     {
         
+        \App\Models\Persona::factory(200)->create();
+        /*
+        $data = [
+            'nombres' => 'Juan Jose',
+            'primer_apellido' => 'Mamani',
+            'segundo_apellido' => 'Lopez',
+            'genero' => 'M',
+            'ci' => '123456',
+            'ci_exp' => 'SC',
+            'fecha_nacimiento' => '1998-12-28',
+            'celular' => '7654321',
+            'telefono' => '3357942',
+            'direccion' => 'casa de Dario',
+            'correo' => Null,
+            'activo' => 1,
+            'eliminado' => 0
+   
 
-        \DB::table('personas')->delete();
+            ];
+        
+        DB::table('personas')->insert($data);
+        
+        /*\DB::table('personas')->delete();
 
         $persona = new Persona();
         $persona->id = 1;
@@ -69,6 +91,7 @@ class PersonasTableSeeder extends Seeder
         $persona->activo = 1;
         $persona->eliminado = 0;
         $persona->save();
+        */
         
     }
 }
