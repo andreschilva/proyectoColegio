@@ -23,7 +23,7 @@ class UsuariosTableSeeder extends Seeder
         $usuario->id = 1;
         $usuario->login = 'admin';
         $usuario->pass = md5('1234') ;
-        $usuario->perfil_id = 3;
+        $usuario->perfil_id = 7;
         $usuario->activo = 1;               
         $usuario->eliminado = 0;
         $usuario->tipo ='sup';

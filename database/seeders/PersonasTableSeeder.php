@@ -17,7 +17,7 @@ class PersonasTableSeeder extends Seeder
     public function run()
     {
         
-        \App\Models\Persona::factory(200)->create();
+        \App\Models\Persona::factory(60)->create();
         /*
         $data = [
             'nombres' => 'Juan Jose',

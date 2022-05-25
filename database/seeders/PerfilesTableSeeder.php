@@ -40,7 +40,7 @@ class PerfilesTableSeeder extends Seeder
             2 => 
             array (
                 'id' => 3,
-                'nombre' => 'Coordinador',
+                'nombre' => 'Administrador',
                 'es_especial' => 0,
                 'activo' => 1,
                 'eliminado' => 0,
@@ -72,6 +72,17 @@ class PerfilesTableSeeder extends Seeder
                 'activo' => 1,
                 'eliminado' => 0,
             ),
+
+            6 => 
+            array (
+                'id' => 7,
+                'nombre' => 'SupAdmin',
+                'es_especial' => 1,
+                'activo' => 1,
+                'eliminado' => 0,
+            ),
+            
+
         ));
         
         
