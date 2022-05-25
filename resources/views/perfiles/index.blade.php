@@ -56,7 +56,9 @@
                                     <td>{{fecha_latina($perfil->updated_at) }}</td>
                                     <td data-texto="{{$perfil->nombre}}">
                                         <a href="{{route('perfiles.mostrar',$perfil->id)}}" title="Mostrar"><img width="17px" src="{{asset('img/iconos/mostrar.png')}}" alt="Mostrar"></a>
-                                        <a href="{{route('perfiles.modificar',$perfil->id)}}" title="Modificar"><img width="17px" src="{{asset('img/iconos/modificar.png')}}" alt="Modificar"></a>
+                                        @if($perfil->nombre != 'SupAdmin')
+                                            <a href="{{route('perfiles.modificar',$perfil->id)}}" title="Modificar"><img width="17px" src="{{asset('img/iconos/modificar.png')}}" alt="Modificar"></a>
+                                        @endif
                                         @if(!$perfil->es_especial)
                                             <a data-ruta="{{route('perfiles.eliminar',$perfil->id)}}" class="btn-eliminar" title="Eliminar"><img width="17px" src="{{asset('img/iconos/eliminar.png')}}" alt="Eliminar"></a>
                                         @endif

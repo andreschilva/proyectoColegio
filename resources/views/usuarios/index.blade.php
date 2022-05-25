@@ -61,6 +61,7 @@
                                         <a href="{{route('usuarios.mostrar',$usuario->id)}}" title="Mostrar"><img width="17px" src="{{asset('img/iconos/mostrar.png')}}" alt="Mostrar"></a>
                                         @if($usuario->tipo=='adm')
                                             <a href="{{route('usuarios.modificar',$usuario->id)}}" title="Modificar"><img width="17px" src="{{asset('img/iconos/modificar.png')}}" alt="Modificar"></a>
+                                            <a data-ruta="{{route('usuarios.eliminar',$usuario->id)}}" class="btn-eliminar" title="Eliminar"><img width="17px" src="{{asset('img/iconos/eliminar.png')}}" alt="Eliminar"></a>
                                         @endif
                                     </td>
                                 </tr>

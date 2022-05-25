@@ -19,7 +19,7 @@ class Persona extends Model
 
         $filtro="";
         if ($buscar!="") {
-            $filtro=" and (p.nombres like '%$buscar%' or p.primer_apellido or p.segundo_apellido or p.ci like '%$buscar%') ";
+            $filtro=" and (concat(p.primer_apellido,' ',p.segundo_apellido,' ', p.nombres) like '%$buscar%' ) ";
         }
 
         $sql = "select * from personas p

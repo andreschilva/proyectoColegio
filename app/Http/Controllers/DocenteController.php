@@ -81,13 +81,13 @@ class DocenteController extends Controller
         return view('docentes.modificar',$mergeData);
     }
 
-    public function actualizar(Request $request, Docente $Docente)
+    public function actualizar(Request $request, Docente $docente)
     {
         $request->validate([
-            'codigo_docente'=>'required|max:30',
+            'codigo_Docente'=>'required|max:30',
             'activo'=>'required',
         ]);
-        $docente->codigo_docente = $request->codigo_docente;
+        $docente->codigo_docente = $request->codigo_Docente;
         $docente->activo = $request->activo?true:false;
         $docente->save();
 

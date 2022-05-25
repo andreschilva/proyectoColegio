@@ -21,7 +21,7 @@
                             @csrf
                             @method('put')
                             <div class="form-group row">
-                                <label class="col-sm-2 col-form-label">Persona:<i class="text-danger">*</i></label>
+                                <label class="col-sm-2 col-form-label">Docente:<i class="text-danger">*</i></label>
                                 <div class="col-sm-10">
                                     <input type="text" class="form-control"  value="{{$nombreCompleto}}" disabled="">
                                 </div>
@@ -34,10 +34,10 @@
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Codigo_Docente:</label>
                                 <div class="col-sm-10">
-                                    <input type="number" class="form-control" name="codigo_Docente" value="{{ $docente->codigo_rude }}" >
+                                    <input type="number" class="form-control" name="codigo_Docente" value="{{ $docente->codigo_docente}}" >
                                 </div>
                             </div>
-                            @error('codigo_docente')
+                            @error('codigo_Docente')
                                 <div class="alert alert-danger alert-dismissable">{{$message}}<button aria-hidden="true" data-dismiss="alert" class="close" type="button">×</button></div>
                             @enderror
 

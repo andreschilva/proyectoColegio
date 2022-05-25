@@ -20,7 +20,7 @@ class Usuario extends Model
 
         $filtro="";
         if ($buscar!="") {
-            $filtro=" and (a.nombre like '%$buscar%' ) ";
+            $filtro=" and (concat(pe.primer_apellido,' ',pe.segundo_apellido,' ', pe.nombres) like '%$buscar%' ) ";
         }
 
         $sql = "select u.*,p.nombre as perfil, concat(pe.primer_apellido,' ',coalesce(pe.segundo_apellido,''),' ',pe.nombres) as persona 
@@ -31,6 +31,8 @@ class Usuario extends Model
         $usuarios = DB::select($sql);
 
         $sqlTotal = "select count(*) as total from usuarios u
+                    inner join personas pe on pe.id=u.id
+                    left join perfiles p on p.id=u.perfil_id
                     where u.eliminado = 0 $filtro";
         $result = DB::select($sqlTotal); //no tocar 
         $total=$totPaginas=0;
