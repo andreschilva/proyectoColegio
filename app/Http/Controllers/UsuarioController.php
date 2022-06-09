@@ -23,12 +23,25 @@ class UsuarioController extends Controller
         $buscar=$request->buscar;
         $pagina=$request->pagina;
         $resultado = $usuario->obtenerUsuarios($buscar,$pagina);
+        foreach(session('permisos') as $modulo) {
+            foreach($modulo['funcionalidades'] as $funcionalidad ){
+                if( $funcionalidad['titulo'] == 'Usuarios'){ 
+                    $permisos = [
+                       'Permiso_mostrar'=> $funcionalidad['Permiso_mostrar'],
+                       'Permiso_modificar'=> $funcionalidad['Permiso_modificar'],
+                       'Permiso_Eliminar'=> $funcionalidad['Permiso_Eliminar'],
+                   ];
+                }
+                
+            }
+        }
         $mergeData = [
             'usuarios'=>$resultado['usuarios'],
             'total'=>$resultado['total'],
             'buscar'=>$buscar,
             'parPaginacion'=>$resultado['parPaginacion'],
-            'parControl'=>$this->parControl
+            'parControl'=>$this->parControl,
+            'permisos' => $permisos
         ];
         return view('usuarios.index',$mergeData);
     }
