@@ -61,14 +61,26 @@
                                     <td>{{fecha_latina($estudiante->created_at) }}</td>
                                     <td>{{fecha_latina($estudiante->updated_at) }}</td>
                                     <td data-texto="{{$estudiante->login}}">
-                                        <a href="{{route('estudiantes.mostrar',$estudiante->id)}}" title="Mostrar"><img width="17px" src="{{asset('img/iconos/mostrar.png')}}" alt="Mostrar"></a>
-                                        
+                                        @if ($permisos['Permiso_mostrar'] == 1) 
+                                            <a href="{{route('estudiantes.mostrar',$estudiante->id)}}" title="Mostrar"><img width="17px" src="{{asset('img/iconos/mostrar.png')}}" alt="Mostrar"></a>
+                                        @endif
+                                          
                                     </td>
                                 <td>
-
-                                    <a href="{{route('estudiantes.modificar',$estudiante->id)}}" title="Modificar"><img width="17px" src="{{asset('img/iconos/modificar.png')}}" alt="Modificar"></a>
+                                    @if ($permisos['Permiso_modificar'] == 1) 
+                                        <a href="{{route('estudiantes.modificar',$estudiante->id)}}" title="Modificar"><img width="17px" src="{{asset('img/iconos/modificar.png')}}" alt="Modificar"></a>
+                                    @endif
+                                    
                                 </td>
-                                <td><a data-ruta="{{route('estudiantes.eliminar',$estudiante->id)}}" class="btn-eliminar" title="Eliminar"><img width="17px" src="{{asset('img/iconos/eliminar.png')}}" alt="Eliminar"></a></td>
+                                <td>
+                                    @if ($permisos['Permiso_Eliminar'] == 1) 
+                                        
+                                            <a data-ruta="{{route('estudiantes.eliminar',$estudiante->id)}}" class="btn-eliminar" title="Eliminar"><img width="17px" src="{{asset('img/iconos/eliminar.png')}}" alt="Eliminar"></a>
+                                       
+                                    @endif
+                                </td>
+
+                                    
                                 </tr>
                             @endforeach
                         </tbody>
