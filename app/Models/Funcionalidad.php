@@ -64,7 +64,7 @@ class Funcionalidad extends Model
     
     public function obtenerFuncionalidadesActivasEnPerfil($modulo_id,$perfil_id)
     {
-        $sql = "select f.id,f.titulo, p.perfil_id 
+        $sql = "select f.id,f.titulo, p.perfil_id ,p.Permiso_mostrar, p.Permiso_modificar, p.Permiso_Eliminar
                 from funcionalidades f 
                 left join permisos p on p.funcionalidad_id = f.id and p.perfil_id =$perfil_id
                 where f.activo =1 and f.eliminado =0 and f.modulo_id =$modulo_id order by f.orden asc";
