@@ -17,6 +17,10 @@ class CreatePermisosTable extends Migration
             $table->integer('id', true);
             $table->integer('perfil_id')->index('perfil_id');
             $table->integer('funcionalidad_id')->index('funcionalidad_id');
+            $table->boolean('Permiso_mostrar')->nullable()->default(false);
+            $table->boolean('Permiso_modificar')->nullable()->default(false);
+            $table->boolean('Permiso_Eliminar')->nullable()->default(false);
+            $table->timestamps();
         });
     }
 
