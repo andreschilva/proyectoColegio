@@ -24,12 +24,25 @@ class MatriculaController extends Controller
         $buscar=$request->buscar;
         $pagina=$request->pagina;
         $resultado = $matricula->obtenerMatriculas($buscar,$pagina);
+        foreach(session('permisos') as $modulo) {
+            foreach($modulo['funcionalidades'] as $funcionalidad ){
+                if( $funcionalidad['titulo'] == 'Matriculas'){ 
+                    $permisos = [
+                       'Permiso_mostrar'=> $funcionalidad['Permiso_mostrar'],
+                       'Permiso_modificar'=> $funcionalidad['Permiso_modificar'],
+                       'Permiso_Eliminar'=> $funcionalidad['Permiso_Eliminar'],
+                   ];
+                }
+                
+            }
+        }
         $mergeData = [
             'matriculas'=>$resultado['matriculas'],
             'total'=>$resultado['total'],
             'buscar'=>$buscar,
             'parPaginacion'=>$resultado['parPaginacion'],
-            'parControl'=>$this->parControl
+            'parControl'=>$this->parControl,
+            'permisos' => $permisos
         ];
         return view('matriculas.index',$mergeData);
     }

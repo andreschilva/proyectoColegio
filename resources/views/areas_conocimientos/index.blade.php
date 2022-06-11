@@ -55,9 +55,18 @@
                                     <td>{{fecha_latina($area_conocimiento->created_at) }}</td>
                                     <td>{{fecha_latina($area_conocimiento->updated_at) }}</td>
                                     <td data-texto="{{$area_conocimiento->nombre}}">
-                                        <a href="{{route('areas_conocimientos.mostrar',$area_conocimiento->id)}}" title="Mostrar"><img width="17px" src="{{asset('img/iconos/mostrar.png')}}" alt="Mostrar"></a>
-                                        <a href="{{route('areas_conocimientos.modificar',$area_conocimiento->id)}}" title="Modificar"><img width="17px" src="{{asset('img/iconos/modificar.png')}}" alt="Modificar"></a>
-                                        <a data-ruta="{{route('areas_conocimientos.eliminar',$area_conocimiento->id)}}" class="btn-eliminar" title="Eliminar"><img width="17px" src="{{asset('img/iconos/eliminar.png')}}" alt="Eliminar"></a>
+                                        @if ($permisos['Permiso_mostrar'] == 1)
+                                            <a href="{{route('areas_conocimientos.mostrar',$area_conocimiento->id)}}" title="Mostrar"><img width="17px" src="{{asset('img/iconos/mostrar.png')}}" alt="Mostrar"></a>
+                                        @endif
+                                        @if ($permisos['Permiso_modificar'] == 1)
+                                            <a href="{{route('areas_conocimientos.modificar',$area_conocimiento->id)}}" title="Modificar"><img width="17px" src="{{asset('img/iconos/modificar.png')}}" alt="Modificar"></a>
+                                        @endif
+                                        @if ($permisos['Permiso_Eliminar'] == 1)
+                                            <a data-ruta="{{route('areas_conocimientos.eliminar',$area_conocimiento->id)}}" class="btn-eliminar" title="Eliminar"><img width="17px" src="{{asset('img/iconos/eliminar.png')}}" alt="Eliminar"></a>
+                                        @endif
+                                        
+                                        
+                                        
                                     </td>
                                 </tr>
                             @endforeach

@@ -20,12 +20,25 @@ class GestionController extends Controller
         $buscar=$request->buscar;
         $pagina=$request->pagina;
         $resultado = $gestion->obtenerGestiones($buscar,$pagina);
+        foreach(session('permisos') as $modulo) {
+            foreach($modulo['funcionalidades'] as $funcionalidad ){
+                if( $funcionalidad['titulo'] == 'Gestiones'){ 
+                    $permisos = [
+                       'Permiso_mostrar'=> $funcionalidad['Permiso_mostrar'],
+                       'Permiso_modificar'=> $funcionalidad['Permiso_modificar'],
+                       'Permiso_Eliminar'=> $funcionalidad['Permiso_Eliminar'],
+                   ];
+                }
+                
+            }
+        }
         $mergeData = [
             'gestiones'=>$resultado['gestiones'],
             'total'=>$resultado['total'],
             'buscar'=>$buscar,
             'parPaginacion'=>$resultado['parPaginacion'],
-            'parControl'=>$this->parControl
+            'parControl'=>$this->parControl,
+            'permisos' => $permisos
         ];
         return view('gestiones.index',$mergeData);
     }

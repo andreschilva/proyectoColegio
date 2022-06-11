@@ -34,7 +34,7 @@
                                 <label class="col-sm-2 col-form-label">Creado</label>
                                 <div class="col-sm-10"><input type="text" class="form-control" value="{{fecha_latina($matricula->created_at) }}" disabled=""></div>
                             </div>
-                            <div class="form-group row">
+                            {{-- <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Mensualidades</label>
                                 <div class="col-sm-10">
                                     <table class="table">
@@ -64,7 +64,7 @@
                                         </tbody>
                                       </table>
                                 </div>
-                            </div>
+                            </div> --}}
                         </form>
                     </div>
                 </div>

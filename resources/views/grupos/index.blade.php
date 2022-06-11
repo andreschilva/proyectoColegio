@@ -65,9 +65,19 @@
                                     </td>
                                     <td>{{fecha_latina($grupo->created_at) }}</td>
                                     <td data-texto="{{$grupo->nombre}}">
-                                        <a href="{{route('grupos.mostrar',$grupo->id)}}" title="Mostrar"><img width="17px" src="{{asset('img/iconos/mostrar.png')}}" alt="Mostrar"></a>
-                                        <a href="{{route('grupos.modificar',$grupo->id)}}" title="Modificar"><img width="17px" src="{{asset('img/iconos/modificar.png')}}" alt="Modificar"></a>
-                                        <a data-grupo="{{route('grupos.eliminar',$grupo->id)}}" class="btn-eliminar" title="Eliminar"><img width="17px" src="{{asset('img/iconos/eliminar.png')}}" alt="Eliminar"></a>
+                                        
+                                        @if ($permisos['Permiso_mostrar'] == 1)
+                                            <a href="{{route('grupos.mostrar',$grupo->id)}}" title="Mostrar"><img width="17px" src="{{asset('img/iconos/mostrar.png')}}" alt="Mostrar"></a>
+                                        @endif
+                                        @if ($permisos['Permiso_modificar'] == 1)
+                                            <a href="{{route('grupos.modificar',$grupo->id)}}" title="Modificar"><img width="17px" src="{{asset('img/iconos/modificar.png')}}" alt="Modificar"></a> 
+                                        @endif
+                                        @if ($permisos['Permiso_Eliminar'] == 1)
+                                            <a data-grupo="{{route('grupos.eliminar',$grupo->id)}}" class="btn-eliminar" title="Eliminar"><img width="17px" src="{{asset('img/iconos/eliminar.png')}}" alt="Eliminar"></a>
+                                        @endif
+                                        
+                                        
+                                        
                                     </td>
                                 </tr>
                             @endforeach

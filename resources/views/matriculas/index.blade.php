@@ -63,8 +63,22 @@
                                     </td>
                                     <td>{{fecha_latina($matricula->created_at) }}</td>
                                     <td data-texto="{{$matricula->fecha}}">
-                                        <a href="{{route('matriculas.mostrar',$matricula->id)}}" title="Mostrar"><img width="17px" src="{{asset('img/iconos/mostrar.png')}}" alt="Mostrar"></a>
-                                        <a data-matricula="{{route('matriculas.anular',$matricula->id)}}" class="btn-eliminar" title="Eliminar"><img width="17px" src="{{asset('img/iconos/eliminar.png')}}" alt="Eliminar"></a>
+                                        
+                                        @if ($permisos['Permiso_mostrar'] == 1)
+                                            <a href="{{route('matriculas.mostrar',$matricula->id)}}" title="Mostrar"><img width="17px" src="{{asset('img/iconos/mostrar.png')}}" alt="Mostrar"></a>
+                                        @endif
+                                        {{-- @if ($permisos['Permiso_modificar'] == 1)
+                                        <a href="{{ route('matriculas.modificar', $matricula->id) }}"
+                                            title="Modificar"><img width="17px"
+                                                src="{{ asset('img/iconos/modificar.png') }}" alt="Modificar"></a>
+
+                                        @endif --}}
+                                        @if ($permisos['Permiso_Eliminar'] == 1)
+                                            <a data-matricula="{{route('matriculas.anular',$matricula->id)}}" class="btn-eliminar" title="Eliminar"><img width="17px" src="{{asset('img/iconos/eliminar.png')}}" alt="Eliminar"></a>
+                                           
+                                        @endif
+                                        
+                                          
                                     </td>
                                 </tr>
                             @endforeach
