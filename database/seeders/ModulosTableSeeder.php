@@ -38,6 +38,16 @@ class ModulosTableSeeder extends Seeder
         $modulo->activo = 1;
         $modulo->eliminado = 0;
         $modulo->save();
+        
+        $modulo = new Modulo();
+        $modulo->id = 3;
+        $modulo->titulo ='Inscripcion';
+        $modulo->codigo = 'inscripcion';
+        $modulo->icono = 'fa-edit';
+        $modulo->orden = 3;
+        $modulo->activo = 1;
+        $modulo->eliminado = 0;
+        $modulo->save();
        
         
     }
