@@ -57,7 +57,8 @@ class Funcionalidad extends Model
 
     public function obtenerFuncionalidadesActivas($modulo_id)
     {
-        $sql = "select id,titulo from funcionalidades f where f.activo =1 and f.eliminado =0 and modulo_id=$modulo_id order by f.orden asc";
+        $sql = "select id,titulo from funcionalidades f 
+                where f.activo =1 and f.eliminado =0 and modulo_id=$modulo_id order by f.orden asc";
         $funcionalidades = DB::select($sql);
         return $funcionalidades;
     }

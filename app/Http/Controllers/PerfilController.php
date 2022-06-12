@@ -96,12 +96,36 @@ class PerfilController extends Controller
 
         $perfilId = $perfil->id;
 
-        $fucionalidadesIds = $request->funcionalidades;
-        if ($fucionalidadesIds) {
-            foreach ($fucionalidadesIds as $funcionalidadId) {
+        $fucionalidades = $request->funcionalidades;
+        if ($fucionalidades) {
+            foreach ($fucionalidades as $funcionalidad) {
+                /* dd($funcionalidad); */
                 $permiso = new Permiso();
                 $permiso->perfil_id = $perfilId;
-                $permiso->funcionalidad_id = $funcionalidadId;
+                $permiso->funcionalidad_id = $funcionalidad['id'];
+                if(isset($funcionalidad['Permiso_mostrar'])) {
+                    $permiso->Permiso_mostrar = $funcionalidad['Permiso_mostrar'];
+                    
+                    
+                }
+                else {
+                    $permiso->Permiso_mostrar = 0;
+                }
+                if(isset($funcionalidad['Permiso_modificar'])) {
+                    $permiso->Permiso_modificar = $funcionalidad['Permiso_modificar'];
+                    
+                    
+                }
+                else {
+                    $permiso->Permiso_modificar = 0;
+                }
+                if(isset($funcionalidad['Permiso_Eliminar'])) {
+                    $permiso->Permiso_Eliminar = $funcionalidad['Permiso_Eliminar'];
+                    
+                }
+                else {
+                    $permiso->Permiso_Eliminar = 0;
+                }
                 $permiso->save();
             }
         }

@@ -1,7 +1,9 @@
 @extends('layouts.master')
 @section('titulo', $parControl['titulo'])
 
+
 @section('content')
+
     <div class="row wrapper border-bottom white-bg page-heading">
         <div class="col-lg-12">
             <h2>Modificar Perfil</h2>
@@ -51,7 +53,18 @@
                             <div class="form-group row"><label class="col-sm-2 col-form-label">Permisos </label>
 
                                 <div class="col-sm-10">
-                                    <?php $contador = 0?>
+                                    <?php $contador = 0
+                                    ?>
+                                    <?php 
+                                     $contador2 = 100    
+                                    ?>
+                                    <?php 
+                                     $contador3 = 300   
+                                    ?>
+                                    <?php 
+                                    $contador4 = 400   
+                                   ?>
+                                   
                                     @foreach ($modulos as $modulo)
                                         <div class="i-checks"><label><strong>{{ $modulo->titulo }}</strong></label>
                                         </div>
@@ -61,25 +74,25 @@
                                                 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
                                                 <div class="row">
                                                     <div class="col-sm-3"> <label> <input type="checkbox"
-                                                                name="funcionalidades[{{ $contador }}][id]" value="{{ $funcionalidad->id }}"
-                                                                @if ($funcionalidad->perfil_id) checked="" @endif>
+                                                                name="funcionalidades[{{ $contador }}][id]" id ={{ $contador4}}  value="{{ $funcionalidad->id }}"
+                                                                @if ($funcionalidad->perfil_id) checked="" @endif onclick = "enableDisable({{$contador4}},{{ $contador}},{{ $contador2}},{{ $contador3}});" >
                                                             <i></i>{{ $funcionalidad->titulo }}</label>
                                                     </div>
 
-                                                    <div class="col-sm-2"> <label> <input type="checkbox"
-                                                                name="funcionalidades[{{ $contador }}][Permiso_mostrar]" value= 1 
-                                                                @if ($funcionalidad->Permiso_mostrar == 1) checked="" @endif>
+                                                    <div class="col-sm-2"> <label> <input type="checkbox" 
+                                                                name="funcionalidades[{{ $contador }}][Permiso_mostrar]" disabled = "" id = {{ $contador}} value= 1 
+                                                                @if ($funcionalidad->Permiso_mostrar == 1) checked= ""  @endif> 
                                                             <i></i>mostrar</label>
                                                     </div>
 
                                                     <div class="col-sm-2"> <label> <input type="checkbox"
-                                                        name="funcionalidades[{{ $contador }}][Permiso_modificar]" value= 1
+                                                        name="funcionalidades[{{ $contador }}][Permiso_modificar]" disabled = "" id = {{ $contador2}} value= 1
                                                         @if ($funcionalidad->Permiso_modificar == 1) checked="" @endif>
                                                     <i></i>modificar</label>
                                                     </div>
 
-                                                    <div class="col-sm-2"> <label> <input type="checkbox"
-                                                        name="funcionalidades[{{ $contador }}][Permiso_Eliminar]" value =  1 
+                                                    <div class="col-sm-2" > <label> <input type="checkbox"
+                                                        name="funcionalidades[{{ $contador }}][Permiso_Eliminar]" disabled = "" id = {{ $contador3}}  value =  1 
                                                         @if ($funcionalidad->Permiso_Eliminar == 1) checked="" @endif>
                                                     <i></i>Eliminar</label>
                                                     </div>
@@ -87,9 +100,15 @@
                                                 </div>
 
                                             </div>
-                                            <?php $contador = $contador + 1?>
+                                            <?php $contador = $contador + 1 ?>
+                                            <?php $contador2 = $contador2 + 1 ?>
+                                            <?php $contador3 = $contador3 + 1 ?>
+                                            <?php $contador4 = $contador4 + 1 ?>
+                                            
                                         @endforeach
+                                        
                                     @endforeach
+
                                 </div>
                             </div>
 
