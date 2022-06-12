@@ -9,6 +9,7 @@ use App\Models\Mensualidad;
 use App\Libs\Funciones;
 use Carbon\Carbon;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class MatriculaController extends Controller
 {
@@ -59,7 +60,18 @@ class MatriculaController extends Controller
 
     public function agregar()
     { 
-        $mergeData = ['parControl'=>$this->parControl];
+        $sql = "select p.id, concat(coalesce(p.primer_apellido,''),' ',coalesce(p.segundo_apellido,''),' ',p.nombres) as nombre_completo 
+                        from estudiantes e
+                        inner join personas p on  e.id = p.id 
+                        where  p.activo=1 and p.eliminado=0 and not exists(select m.estudiante_id from matriculas m where m.estudiante_id = e.id )";
+        $estudiantes = DB::select($sql); 
+        $grupos = new Grupo();
+        $grupo = $grupos->obtenerGruposActivos();
+        /* $grupo =  Grupo::obtenerGruposActivos();   */                    
+        $mergeData = ['parControl'=>$this->parControl,
+                        'estudiantes' => $estudiantes ,
+                        'grupos'=> $grupo  
+                        ];
         return view('matriculas.agregar',$mergeData);  
     }
 

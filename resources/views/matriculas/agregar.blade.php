@@ -24,8 +24,15 @@
                             <div class="form-group row">
                                 <label class="col-sm-2 col-form-label">Estudiante:<i class="text-danger">*</i></label>
                                 <div class="col-sm-10">
-                                    <input type="text" placeholder="Estudiante" name="txtEstudiante" id="txtEstudiante" value="" class="typeahead_2 form-control" />
-                                    <input type="hidden" name="id" id="id" value="{{old('id')}}">
+
+                                    <select class="form-control" name="id"  id="id">
+                                        <option value="" ></option>
+                                        @foreach ($estudiantes as $estudiante)
+                                            <option value="{{$estudiante->id}}" >{{$estudiante->nombre_completo}} </option>
+                                        @endforeach
+                                    </select>
+                                   {{--  <input type="text" placeholder="Estudiante" name="txtEstudiante" id="txtEstudiante" value="" class="typeahead_2 form-control" />
+                                    <input type="hidden" name="id" id="id" value="{{old('id')}}"> --}}
                                     {{-- <input type="text" class="form-control" name="id" value="{{old('id')}}" required=""> --}}
                                 </div>
                             </div>
@@ -42,7 +49,10 @@
                                         <img src="{{asset('img/ajax-loader.gif')}}">
                                     </div>
                                     <select class="form-control" name="grupo_id"  id="grupo_id">
-                                        {{-- <option value="" ></option> --}}
+                                        <option value="" ></option>
+                                        @foreach ($grupos as $grupo)
+                                            <option value="{{$grupo->id}}" >{{$grupo->nombre}} </option>
+                                        @endforeach
                                     </select>
                                 </div>
                             </div>

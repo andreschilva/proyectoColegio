@@ -52,7 +52,7 @@ class Grupo extends Model
             'parPaginacion'=>['pagActual'=>$pagina,'totPaginas'=>$totPaginas] //NT
         ];
     }
-    public function obtenerGruposActivos()
+    public static function obtenerGruposActivos()
     {
         $sql = "select id,nombre
                 from grupos gr
