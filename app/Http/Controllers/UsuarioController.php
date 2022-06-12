@@ -1,9 +1,13 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Events\UsuarioInsertar;
+use App\Events\UsuarioInstertarEvent;
 use Illuminate\Support\Facades\DB;
 
 use App\Models\Usuario;
+use App\Models\Bitacora;
 use App\Models\Persona;
 use App\Models\Perfil;
 use App\Libs\Funciones;
@@ -73,7 +77,13 @@ class UsuarioController extends Controller
         $usuario->activo = $request->activo?true:false;
         $usuario->save();
 
+
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha agregado un ususario con id: " .$request->id ;
+        $usuario_dato->save();
+
         return redirect()->route('usuarios.mostrar',$request->id);
+        
     }
 
     public function modificar($id)
@@ -86,6 +96,11 @@ class UsuarioController extends Controller
         $nombrePersona = $oPersona->getNombreCompleto($id);
 
         $mergeData = ['id'=>$id,'usuario'=>$usuario,'nombreCompleto'=>$nombrePersona,'perfiles'=>$perfiles,'parControl'=>$this->parControl];
+        
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "El ususario con id: " .$id. " fue Modificado" ;
+        $usuario_dato->save();
+
         return view('usuarios.modificar',$mergeData);
     }
 
@@ -112,7 +127,13 @@ class UsuarioController extends Controller
         $usuario = Usuario::find($id);
         $usuario->eliminado=true;
         $usuario->save();
+
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "El ususario con id: " .$id. " fue Eliminado" ;
+        $usuario_dato->save();
+
         return redirect()->route('usuarios.index');
+
     }
 
     public function personasActivas(Request $request)

@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bitacora;
 use App\Models\Modulo;
 use App\Libs\Funciones;
 use Illuminate\Http\Request;
@@ -54,6 +55,11 @@ class ModuloController extends Controller
         $modulo->activo = $request->activo?true:false;
         $modulo->save();
 
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha insertado un nuevo Modulo con el id: " .$modulo->id ;
+        $usuario_dato->save();
+
+
         return redirect()->route('modulos.mostrar',$modulo->id);
     }
 
@@ -80,6 +86,10 @@ class ModuloController extends Controller
         $modulo->activo = $request->activo?true:false;
         $modulo->save();
 
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha actualizado el Modulo con id: " .$modulo->id ;
+        $usuario_dato->save();
+
         return redirect()->route('modulos.mostrar',$modulo->id);
     }
 
@@ -88,6 +98,11 @@ class ModuloController extends Controller
         $modulo = Modulo::find($id);
         $modulo->eliminado=true;
         $modulo->save();
+
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha eliminado el Modulo con id: " .$modulo->id ;
+        $usuario_dato->save();
+
         return redirect()->route('modulos.index');
     }
 }
