@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\Bitacora;
 use App\Models\Funcionalidad;
 use App\Models\Modulo;
 use App\Libs\Funciones;
@@ -70,6 +72,11 @@ class FuncionalidadController extends Controller
         $funcionalidad->activo = $request->activo?true:false;
         $funcionalidad->save();
 
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha insertado una Funcionalidad con id: " .$funcionalidad->id ;
+        $usuario_dato->save();
+
+
         return redirect()->route('funcionalidades.mostrar',$funcionalidad->id);
     }
     public function mostrar($id)
@@ -86,6 +93,7 @@ class FuncionalidadController extends Controller
         $modulos = $modulo->obtenerModulosActivos();
 
         $mergeData = ['id'=>$id,'funcionalidad'=>$funcionalidad,'modulos'=>$modulos,'parControl'=>$this->parControl];
+        
         return view('funcionalidades.modificar',$mergeData);
     }
 
@@ -105,6 +113,10 @@ class FuncionalidadController extends Controller
         $funcionalidad->activo = $request->activo?true:false;
         $funcionalidad->save();
 
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha actualizado una Funcionalidad con id: " .$funcionalidad->id ;
+        $usuario_dato->save();
+
         return redirect()->route('funcionalidades.mostrar',$funcionalidad->id);
     }
 
@@ -113,6 +125,11 @@ class FuncionalidadController extends Controller
         $funcionalidad = Funcionalidad::find($id);
         $funcionalidad->eliminado=true;
         $funcionalidad->save();
+
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha eliminado una Funcionalidad con id: " .$funcionalidad->id ;
+        $usuario_dato->save();
+
         return redirect()->route('funcionalidades.index');
     }
 }

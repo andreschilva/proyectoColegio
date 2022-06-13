@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bitacora;
 use App\Models\Docente;
 use App\Models\Persona;
 
@@ -80,6 +81,10 @@ class DocenteController extends Controller
         $docente->activo = $request->activo?true:false;
         $docente->save();
 
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha insertado un Docente con id: " .$request->id;
+        $usuario_dato->save();
+
         return redirect()->route('docentes.mostrar',$request->id);
     }
 
@@ -104,6 +109,10 @@ class DocenteController extends Controller
         $docente->activo = $request->activo?true:false;
         $docente->save();
 
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha actualizado un Docente con id: " .$request->id;
+        $usuario_dato->save();
+
         return redirect()->route('docentes.mostrar',$docente->id);
     }
 
@@ -112,6 +121,11 @@ class DocenteController extends Controller
         $docente = Docente::find($id);
         $docente->eliminado=true;
         $docente->save();
+
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha eliminado un Docente con id: " .$id;
+        $usuario_dato->save();
+
         return redirect()->route('docentes.index');
     }
 

@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\Bitacora;
 use App\Models\Persona;
 use App\Libs\Funciones;
 use Illuminate\Http\Request;
@@ -87,6 +89,11 @@ class PersonaController extends Controller
         $persona->activo = $request->activo?true:false;
         $persona->save();
 
+
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha agregado una nueva Persona con id: " .$persona->id ;
+        $usuario_dato->save();
+
         return redirect()->route('personas.mostrar',$persona->id);
     }
 
@@ -94,6 +101,7 @@ class PersonaController extends Controller
     {
         $persona = Persona::find($id);
         $mergeData = ['id'=>$id,'persona'=>$persona,'parControl'=>$this->parControl];
+
         return view('personas.modificar',$mergeData);
     }
 
@@ -127,6 +135,10 @@ class PersonaController extends Controller
         $persona->activo = $request->activo?true:false;
         $persona->save();
 
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha actualizado una nueva Persona con id: " .$persona->id ;
+        $usuario_dato->save();
+
         return redirect()->route('personas.mostrar',$persona->id);
     }
 
@@ -135,6 +147,12 @@ class PersonaController extends Controller
         $persona = Persona::find($id);
         $persona->eliminado=true;
         $persona->save();
+
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha eliminado una nueva Persona con id: " .$persona->id ;
+        $usuario_dato->save();
+
+
         return redirect()->route('personas.index');
     }
 }

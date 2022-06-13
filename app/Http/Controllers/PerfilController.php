@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bitacora;
 use App\Models\Perfil;
 use App\Models\Modulo;
 use App\Models\Funcionalidad;
@@ -130,7 +131,11 @@ class PerfilController extends Controller
             }
         }
 
-        return redirect()->route('perfiles.mostrar', $perfil->id);
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha insertado un nuevo Perfil con id: " .$perfil->id ;
+        $usuario_dato->save();
+        
+        return redirect()->route('perfiles.mostrar',$perfil->id);
     }
 
     public function modificar($id)
@@ -200,6 +205,10 @@ class PerfilController extends Controller
                 $permiso->save();
             }
         }
+        
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha actualizado un Perfil con id: " .$perfil->id ;
+        $usuario_dato->save();
 
 
         return redirect()->route('perfiles.mostrar', $perfil->id);
@@ -210,6 +219,11 @@ class PerfilController extends Controller
         $perfil = Perfil::find($id);
         $perfil->eliminado = true;
         $perfil->save();
+
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha eliminado un Perfil con id: " .$perfil->id ;
+        $usuario_dato->save();
+
         return redirect()->route('perfiles.index');
     }
 }

@@ -30,7 +30,7 @@ class UsuariosTableSeeder extends Seeder
         $usuario->save();
 
         $usuario = new Usuario();
-        $usuario->id = 3;
+        $usuario->id = 2;
         $usuario->login = 'admin2';
         $usuario->pass = md5('1234') ;
         $usuario->perfil_id = 7;
@@ -40,7 +40,7 @@ class UsuariosTableSeeder extends Seeder
         $usuario->save();
 
         $usuario = new Usuario();
-        $usuario->id = 4;
+        $usuario->id = 3;
         $usuario->login = 'admin3';
         $usuario->pass = md5('1234') ;
         $usuario->perfil_id = 7;
@@ -50,7 +50,7 @@ class UsuariosTableSeeder extends Seeder
         $usuario->save();
 
         $usuario = new Usuario();
-        $usuario->id = 5;
+        $usuario->id = 4;
         $usuario->login = 'admin4';
         $usuario->pass = md5('1234') ;
         $usuario->perfil_id = 7;
@@ -58,6 +58,8 @@ class UsuariosTableSeeder extends Seeder
         $usuario->eliminado = 0;
         $usuario->tipo ='sup';
         $usuario->save();
+
+        
 
         
         

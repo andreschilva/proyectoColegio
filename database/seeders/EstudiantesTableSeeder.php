@@ -21,7 +21,7 @@ class EstudiantesTableSeeder extends Seeder
         DB::table('estudiantes')->delete();
 
         $estudiante = new Estudiante();
-        $estudiante->id = 2;
+        $estudiante->id = 5;
         $estudiante->login = 'juan';
         $estudiante->pass = md5('123456');
         $estudiante->perfil_id = 1;

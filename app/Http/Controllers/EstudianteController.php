@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+
+use App\Models\Bitacora;
 use App\Models\Estudiante;
 use App\Models\Persona;
 
@@ -79,6 +81,10 @@ class EstudianteController extends Controller
         $estudiante->activo = $request->activo?true:false;
         $estudiante->save();
 
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha insertado un Estudiante con id: " .$request->id;
+        $usuario_dato->save();
+
         return redirect()->route('estudiantes.mostrar',$request->id);
     }
 
@@ -103,6 +109,10 @@ class EstudianteController extends Controller
         $estudiante->activo = $request->activo?true:false;
         $estudiante->save();
 
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha actualizado un Estudiante con id: " .$request->id;
+        $usuario_dato->save();
+
         return redirect()->route('estudiantes.mostrar',$estudiante->id);
     }
 
@@ -111,6 +121,11 @@ class EstudianteController extends Controller
         $estudiante = Estudiante::find($id);
         $estudiante->eliminado=true;
         $estudiante->save();
+
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha insertado un Estudiante con id: " .$id;
+        $usuario_dato->save();
+
         return redirect()->route('estudiantes.index');
     }
 
