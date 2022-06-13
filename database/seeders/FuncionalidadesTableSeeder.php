@@ -45,7 +45,7 @@ class FuncionalidadesTableSeeder extends Seeder
                 'eliminado' => 0,
 
             ),
-     /*        2 => 
+            2 => 
             array (
                 'id' => 3,
                 'titulo' => 'Areas de Conocimientos',
@@ -56,8 +56,6 @@ class FuncionalidadesTableSeeder extends Seeder
                 'modulo_id' => 2,
                 'activo' => 1,
                 'eliminado' => 0,
-                'created_at' => '2020-12-28 12:32:00',
-                'updated_at' => NULL,
             ),
             3 => 
             array (
@@ -70,8 +68,7 @@ class FuncionalidadesTableSeeder extends Seeder
                 'modulo_id' => 2,
                 'activo' => 1,
                 'eliminado' => 0,
-                'created_at' => '2020-02-07 08:12:00',
-                'updated_at' => NULL,
+
             ),
             4 => 
             array (
@@ -84,9 +81,8 @@ class FuncionalidadesTableSeeder extends Seeder
                 'modulo_id' => 2,
                 'activo' => 1,
                 'eliminado' => 0,
-                'created_at' => '2020-02-07 08:13:00',
-                'updated_at' => NULL,
-            ), */
+
+            ), 
             5 => 
             array (
                 'id' => 6,
@@ -99,7 +95,7 @@ class FuncionalidadesTableSeeder extends Seeder
                 'activo' => 1,
                 'eliminado' => 0,
             ),
-           /*  6 => 
+             6 => 
             array (
                 'id' => 7,
                 'titulo' => 'Niveles',
@@ -110,10 +106,9 @@ class FuncionalidadesTableSeeder extends Seeder
                 'modulo_id' => 2,
                 'activo' => 1,
                 'eliminado' => 0,
-                'created_at' => '2020-02-07 08:13:00',
-                'updated_at' => NULL,
+
             ),
-            7 => 
+           /* 7 => 
             array (
                 'id' => 8,
                 'titulo' => 'Horas',
@@ -126,7 +121,7 @@ class FuncionalidadesTableSeeder extends Seeder
                 'eliminado' => 0,
                 'created_at' => '2020-02-07 08:13:00',
                 'updated_at' => NULL,
-            ),
+            ),*/
             8 => 
             array (
                 'id' => 9,
@@ -138,8 +133,7 @@ class FuncionalidadesTableSeeder extends Seeder
                 'modulo_id' => 2,
                 'activo' => 1,
                 'eliminado' => 0,
-                'created_at' => '2020-02-07 08:13:00',
-                'updated_at' => NULL,
+
             ),
             9 => 
             array (
@@ -152,10 +146,9 @@ class FuncionalidadesTableSeeder extends Seeder
                 'modulo_id' => 2,
                 'activo' => 1,
                 'eliminado' => 0,
-                'created_at' => '2020-02-07 08:13:00',
-                'updated_at' => NULL,
+
             ),
-            10 => 
+            /*10 => 
             array (
                 'id' => 12,
                 'titulo' => 'Periodos',
@@ -181,7 +174,7 @@ class FuncionalidadesTableSeeder extends Seeder
                 'activo' => 1,
                 'eliminado' => 0,
             ),
-/*             12 => 
+             12 => 
             array (
                 'id' => 14,
                 'titulo' => 'Gestiones',
@@ -192,9 +185,7 @@ class FuncionalidadesTableSeeder extends Seeder
                 'modulo_id' => 2,
                 'activo' => 1,
                 'eliminado' => 0,
-                'created_at' => '2021-02-20 16:50:02',
-                'updated_at' => '2021-02-20 16:50:15',
-            ), */
+            ), 
             13 => 
             array (
                 'id' => 15,
@@ -234,7 +225,7 @@ class FuncionalidadesTableSeeder extends Seeder
                 'eliminado' => 0,
 
             ),
-/*             16 => 
+             16 => 
             array (
                 'id' => 18,
                 'titulo' => 'Grupos',
@@ -245,8 +236,7 @@ class FuncionalidadesTableSeeder extends Seeder
                 'modulo_id' => 2,
                 'activo' => 1,
                 'eliminado' => 0,
-                'created_at' => '2021-02-18 22:56:59',
-                'updated_at' => '2021-03-09 17:32:08',
+
             ),
             17 => 
             array (
@@ -259,10 +249,9 @@ class FuncionalidadesTableSeeder extends Seeder
                 'modulo_id' => 3,
                 'activo' => 1,
                 'eliminado' => 0,
-                'created_at' => '2021-02-18 22:56:59',
-                'updated_at' => NULL,
+
             ),
-            18 => 
+           /* 18 => 
             array (
                 'id' => 20,
                 'titulo' => 'Rep. Inscritos',

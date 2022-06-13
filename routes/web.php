@@ -39,10 +39,28 @@ Route::get('cerrar-session', [SessionController::class,'cerrar'])->name('cerrar.
 })->name('login');  
 
 include_once 'webroutes/ModulosRoutes.php';
+include_once 'webroutes/TurnosRoutes.php';
+include_once 'webroutes/AulasRoutes.php';
+include_once 'webroutes/GestionesRoutes.php';
+
 include_once 'webroutes/PersonasRoutes.php';
+include_once 'webroutes/AreasConocimientosRoutes.php';
+include_once 'webroutes/NivelesRoutes.php';
+
+
+include_once 'webroutes/MateriasRoutes.php';
+include_once 'webroutes/GradosRoutes.php';
+
 include_once 'webroutes/PerfilesRoutes.php';
 include_once 'webroutes/UsuariosRoutes.php';
+include_once 'webroutes/GruposRoutes.php';
+include_once 'webroutes/MatriculasRoutes.php';
+
 include_once 'webroutes/EstudiantesRoutes.php';
 include_once 'webroutes/DocentesRoutes.php';
 include_once 'webroutes/FuncionalidadesRoutes.php';
+
+
+
+
 

@@ -24,6 +24,9 @@ class PermisosTableSeeder extends Seeder
                 'id' => 1,
                 'perfil_id' => 2,
                 'funcionalidad_id' => 17,
+                'Permiso_mostrar'=> 1,
+                'Permiso_modificar' => 0,
+                'Permiso_Eliminar' => 0,
             ),
 
             1 => 
@@ -31,6 +34,10 @@ class PermisosTableSeeder extends Seeder
                 'id' => 2,
                 'perfil_id' => 3,
                 'funcionalidad_id' => 6,
+                'Permiso_mostrar'=> 1,
+                'Permiso_modificar' => 1,
+                'Permiso_Eliminar' => 1,
+
 
             ),
            
@@ -39,6 +46,10 @@ class PermisosTableSeeder extends Seeder
                 'id' => 3,
                 'perfil_id' => 3,
                 'funcionalidad_id' => 13,
+                'Permiso_mostrar'=> 1,
+                'Permiso_modificar' => 1,
+                'Permiso_Eliminar' => 1,
+
 
             ),
             3 => 
@@ -46,6 +57,9 @@ class PermisosTableSeeder extends Seeder
                 'id' => 4,
                 'perfil_id' => 3,
                 'funcionalidad_id' =>15 ,
+                'Permiso_mostrar'=> 1,
+                'Permiso_modificar' => 1,
+                'Permiso_Eliminar' => 1,
 
             ),
             
@@ -54,6 +68,10 @@ class PermisosTableSeeder extends Seeder
                 'id' => 5,
                 'perfil_id' => 3,
                 'funcionalidad_id' => 16,
+                'Permiso_mostrar'=> 1,
+                'Permiso_modificar' => 1,
+                'Permiso_Eliminar' => 1,
+
 
             ),
             5 => 
@@ -61,6 +79,9 @@ class PermisosTableSeeder extends Seeder
                 'id' => 6,
                 'perfil_id' => 3,
                 'funcionalidad_id' => 17,
+                'Permiso_mostrar'=> 1,
+                'Permiso_modificar' => 1,
+                'Permiso_Eliminar' => 1,
 
             ),
             6 => 
@@ -68,6 +89,9 @@ class PermisosTableSeeder extends Seeder
                 'id' => 7,
                 'perfil_id' => 4,
                 'funcionalidad_id' => 6,
+                'Permiso_mostrar'=> 1,
+                'Permiso_modificar' => 1,
+                'Permiso_Eliminar' => 0,
 
             ),
             7 => 
@@ -75,6 +99,9 @@ class PermisosTableSeeder extends Seeder
                 'id' => 8,
                 'perfil_id' => 4,
                 'funcionalidad_id' => 16,
+                'Permiso_mostrar'=> 1,
+                'Permiso_modificar' => 1,
+                'Permiso_Eliminar' => 0,
 
             ),
             
@@ -83,6 +110,9 @@ class PermisosTableSeeder extends Seeder
                 'id' => 9,
                 'perfil_id' => 4,
                 'funcionalidad_id' => 17,
+                'Permiso_mostrar'=> 1,
+                'Permiso_modificar' => 1,
+                'Permiso_Eliminar' => 0,
 
             ),
 
@@ -91,6 +121,9 @@ class PermisosTableSeeder extends Seeder
                 'id' => 10,
                 'perfil_id' => 5,
                 'funcionalidad_id' => 6,
+                'Permiso_mostrar'=> 1,
+                'Permiso_modificar' => 0,
+                'Permiso_Eliminar' => 0,
 
             ),
             10 => 
@@ -98,6 +131,9 @@ class PermisosTableSeeder extends Seeder
                 'id' => 11,
                 'perfil_id' => 5,
                 'funcionalidad_id' => 16,
+                'Permiso_mostrar'=> 1,
+                'Permiso_modificar' => 0,
+                'Permiso_Eliminar' => 0,
 
             ),
             
@@ -106,6 +142,9 @@ class PermisosTableSeeder extends Seeder
                 'id' => 12,
                 'perfil_id' => 5,
                 'funcionalidad_id' => 17,
+                'Permiso_mostrar'=> 1,
+                'Permiso_modificar' => 0,
+                'Permiso_Eliminar' => 0,
 
             ),
             12 => 
@@ -113,6 +152,9 @@ class PermisosTableSeeder extends Seeder
                 'id' => 13,
                 'perfil_id' => 7,
                 'funcionalidad_id' =>1,
+                'Permiso_mostrar'=> 1,
+                'Permiso_modificar' => 1,
+                'Permiso_Eliminar' => 1,
 
             ),
             13 => 
@@ -120,6 +162,9 @@ class PermisosTableSeeder extends Seeder
                 'id' => 14,
                 'perfil_id' => 7,
                 'funcionalidad_id' => 2,
+                'Permiso_mostrar'=> 1,
+                'Permiso_modificar' => 1,
+                'Permiso_Eliminar' => 1,
 
             ),
             
@@ -128,12 +173,18 @@ class PermisosTableSeeder extends Seeder
                 'id' => 15,
                 'perfil_id' => 7,
                 'funcionalidad_id' => 6,
+                'Permiso_mostrar'=> 1,
+                'Permiso_modificar' => 1,
+                'Permiso_Eliminar' => 1,
 
             ),  6 => 
             array (
                 'id' => 16,
                 'perfil_id' => 7,
                 'funcionalidad_id' => 13,
+                'Permiso_mostrar'=> 1,
+                'Permiso_modificar' => 1,
+                'Permiso_Eliminar' => 1,
 
             ),
             15 => 
@@ -141,6 +192,9 @@ class PermisosTableSeeder extends Seeder
                 'id' => 17,
                 'perfil_id' => 7,
                 'funcionalidad_id' => 15,
+                'Permiso_mostrar'=> 1,
+                'Permiso_modificar' => 1,
+                'Permiso_Eliminar' => 1,
 
             ),
             
@@ -149,6 +203,9 @@ class PermisosTableSeeder extends Seeder
                 'id' => 18,
                 'perfil_id' => 7,
                 'funcionalidad_id' => 16,
+                'Permiso_mostrar'=> 1,
+                'Permiso_modificar' => 1,
+                'Permiso_Eliminar' => 1,
 
             ),
             17=> 
@@ -156,6 +213,9 @@ class PermisosTableSeeder extends Seeder
                 'id' => 19,
                 'perfil_id' => 7,
                 'funcionalidad_id' => 17,
+                'Permiso_mostrar'=> 1,
+                'Permiso_modificar' => 1,
+                'Permiso_Eliminar' => 1,
 
             ),
 

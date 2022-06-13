@@ -75,14 +75,48 @@
     
     <script src="{{asset('js/jquery.PrintArea.js')}}"></script>
 
-        <script>
+       {{--  <script>
             $(document).ready(function () {
                 $('.i-checks').iCheck({
                     checkboxClass: 'icheckbox_square-green',
                     radioClass: 'iradio_square-green',
                 });
             });
+        </script> --}}
+
+        {{-- <script> 
+            function Disable(  id, id2) { 
+                if(document.getElementById(id2).checked){    
+                document.getElementById(id).disabled = false;
+                    /* document.getElementById(id2).disabled = false;
+                    document.getElementById(id3).disabled = false; */
+                }else{
+                    document.getElementById(id).disabled = true;
+                }                              
+
+            }
+        </script> --}}
+
+        <script>
+            function enableDisable(idFuncionalidad, id,id2,id3){
+    			if (document.getElementById(idFuncionalidad).checked){
+    				document.getElementById(id).disabled = false;
+                    document.getElementById(id2).disabled = false;
+                    document.getElementById(id3).disabled = false;
+                    
+                    
+    			}else{
+    				document.getElementById(id).disabled = true;
+                    document.getElementById(id2).disabled = true;
+                    document.getElementById(id3).disabled = true;
+                    document.getElementById(id).checked = false;
+                    document.getElementById(id2).checked = false;
+                    document.getElementById(id3).checked = false;
+    			}
+    		}
         </script>
+
+
 </head>
 <body>
     <div id="wrapper">
