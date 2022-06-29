@@ -51,10 +51,10 @@ class MatriculaController extends Controller
     public function mostrar($id)
     {
         $matricula = Matricula::getMatricula($id);
-        /* $mensualidad = new Mensualidad();
-        $mensualidades = $mensualidad->ObtenerMensualidades($matricula->id); */
+        $mensualidad = new Mensualidad();
+        $mensualidades = $mensualidad->ObtenerMensualidades($matricula->id);
 
-        $mergeData = ['id'=>$id,'matricula'=>$matricula,/* 'mensualidades'=>$mensualidades, */'parControl'=>$this->parControl];
+        $mergeData = ['id'=>$id,'matricula'=>$matricula,'mensualidades'=>$mensualidades,'parControl'=>$this->parControl];
         return view('matriculas.mostrar',$mergeData);
     }
 
@@ -67,7 +67,7 @@ class MatriculaController extends Controller
         $estudiantes = DB::select($sql); 
         $grupos = new Grupo();
         $grupo = $grupos->obtenerGruposActivos();
-        /* $grupo =  Grupo::obtenerGruposActivos();   */                    
+        $grupo =  Grupo::obtenerGruposActivos();                      
         $mergeData = ['parControl'=>$this->parControl,
                         'estudiantes' => $estudiantes ,
                         'grupos'=> $grupo  
@@ -91,8 +91,8 @@ class MatriculaController extends Controller
         $matricula->observacion = $request->observacion;
         $matricula->anulado = false;
         $matricula->save();
-        /* $mensualidad = new Mensualidad();
-        $mensualidad->GenerarMensualidades($matricula->id); */
+        $mensualidad = new Mensualidad();
+        $mensualidad->GenerarMensualidades($matricula->id);
         return redirect()->route('matriculas.mostrar',$matricula->id);
     }
 
@@ -123,13 +123,13 @@ class MatriculaController extends Controller
         return json_encode($resultado);
     }
 
-/*
+
     public function eliminar($id)
     {
         $matricula = Matricula::find($id);
-        $matricula->eliminado=true;
+        $matricula->anulado=true;
         $matricula->save();
         return redirect()->route('matriculas.index');
     }
-    */
+    
 }

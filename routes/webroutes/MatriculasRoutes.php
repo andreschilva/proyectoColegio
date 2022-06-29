@@ -7,4 +7,4 @@ Route::get('matriculas/agregar', [MatriculaController::class,'agregar'])->name('
 Route::get('matriculas/{id}', [MatriculaController::class,'mostrar'])->name('matriculas.mostrar')->middleware('sesion.iniciada');
 
 Route::post('matriculas', [MatriculaController::class,'insertar'])->name('matriculas.insertar')->middleware('sesion.iniciada');
-Route::delete('matriculas/{matricula}', [MatriculaController::class,'anular'])->name('matriculas.anular')->middleware('sesion.iniciada');
+Route::delete('matriculas/{matricula}', [MatriculaController::class,'eliminar'])->name('matriculas.anular')->middleware('sesion.iniciada');
