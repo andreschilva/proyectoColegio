@@ -1,9 +1,10 @@
 <?php
 
+namespace Database\Seeders;
 use App\Models\Bitacora;
 use Illuminate\Database\Seeder;
 
-class BitacoraSeeder extends Seeder
+class BitacorasTableSeeder extends Seeder
 {
     /**
      * Run the database seeds.
@@ -12,6 +13,6 @@ class BitacoraSeeder extends Seeder
      */
     public function run()
     {
-        \DB::table('bitacora')->delete();
+        \DB::table('bitacoras')->delete();
     }
 }

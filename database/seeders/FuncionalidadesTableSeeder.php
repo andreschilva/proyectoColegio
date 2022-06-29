@@ -251,6 +251,20 @@ class FuncionalidadesTableSeeder extends Seeder
                 'eliminado' => 0,
 
             ),
+            18 => 
+            array (
+                'id' => 20,
+                'titulo' => 'Bitacoras',
+                'ruta' => 'bitacoras',
+                'accion' => 'index',
+                'orden' => 2,
+                'visible_menu' => 1,
+                'modulo_id' => 1,
+                'activo' => 1,
+                'eliminado' => 0,
+
+            ),
+
            /* 18 => 
             array (
                 'id' => 20,

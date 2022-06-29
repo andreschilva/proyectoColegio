@@ -60,6 +60,9 @@ include_once 'webroutes/EstudiantesRoutes.php';
 include_once 'webroutes/DocentesRoutes.php';
 include_once 'webroutes/FuncionalidadesRoutes.php';
 
+include_once 'webroutes/BitacorasRoutes.php';
+
+
 
 
 

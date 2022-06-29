@@ -13,7 +13,8 @@ class CreateBitacoraTable extends Migration
      */
     public function up()
     {
-        Schema::create('bitacora', function (Blueprint $table) {
+        Schema::create('bitacoras', function (Blueprint $table) {
+            $table->integer('id', true);
             $table->string('descripcion', 120);
             $table->timestamps();
         });

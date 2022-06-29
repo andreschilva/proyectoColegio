@@ -147,6 +147,8 @@
                             <a href="javascript:void(0)"><i class="fa {{$modulo['icono']}}"></i> <span class="nav-label">{{$modulo['titulo']}}</span> <span class="fa arrow"></span></a>
                             <ul class="nav nav-second-level">
                                 @foreach($modulo['funcionalidades'] as $funcionalidad)
+                                
+                               
                                     <li <?=$parControl['funcionalidad']==$funcionalidad['ruta']?'class="active"':'' ?>><a href="{{route($funcionalidad['ruta'].'.'.$funcionalidad['accion'])}}">{{$funcionalidad['titulo']}}</a></li>
                                 @endforeach
                             </ul>
@@ -156,7 +158,7 @@
     
             </div>
         </nav>
-    
+        
         <div id="page-wrapper" class="gray-bg dashbard-1">
         <div class="row border-bottom">
         <nav class="navbar navbar-static-top" role="navigation" style="margin-bottom: 0">
