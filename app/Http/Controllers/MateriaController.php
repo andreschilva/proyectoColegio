@@ -2,10 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Materia;
-use App\Models\AreaConocimiento;
 use App\Libs\Funciones;
+use App\Models\Materia;
+use App\Models\Bitacora;
 use Illuminate\Http\Request;
+use App\Models\AreaConocimiento;
 
 class MateriaController extends Controller
 {
@@ -70,6 +71,11 @@ class MateriaController extends Controller
         $materia->activo = $request->activo?true:false;
         $materia->save();
 
+        
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha insertado una nueva Materia con id: " .$materia->id ;
+        $usuario_dato->save();
+
         return redirect()->route('materias.mostrar',$materia->id);
     }
 
@@ -104,6 +110,10 @@ class MateriaController extends Controller
         $materia->activo = $request->activo?true:false;
         $materia->save();
 
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha actualizado una Materia con id: " .$materia->id ;
+        $usuario_dato->save();
+
         return redirect()->route('materias.mostrar',$materia->id);
     }
 
@@ -112,6 +122,11 @@ class MateriaController extends Controller
         $materia = Materia::find($id);
         $materia->eliminado=true;
         $materia->save();
+
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha eliminado un Materia con id: " .$materia->id ;
+        $usuario_dato->save();
+
         return redirect()->route('materias.index');
     }
 }

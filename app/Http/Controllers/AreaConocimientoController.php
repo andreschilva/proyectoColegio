@@ -3,9 +3,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\AreaConocimiento;
 use App\Libs\Funciones;
+use App\Models\Bitacora;
 use Illuminate\Http\Request;
+use App\Models\AreaConocimiento;
 //hecho por will
 class AreaConocimientoController extends Controller
 {
@@ -67,13 +68,22 @@ class AreaConocimientoController extends Controller
         $areaConocimiento->activo = $request->activo?true:false;
         $areaConocimiento->save();
 
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha agregado una nueva Area de Conocimiento con id: " .$areaConocimiento ->id ;
+        $usuario_dato->save();
+
         return redirect()->route('areas_conocimientos.mostrar',$areaConocimiento->id);
+
+
     }
 
     public function modificar($id)
     {
         $areaConocimiento = AreaConocimiento::find($id);
         $mergeData = ['id'=>$id,'area_conocimiento'=>$areaConocimiento,'parControl'=>$this->parControl];
+
+        
+
         return view('areas_conocimientos.modificar',$mergeData);
     }
 
@@ -87,6 +97,10 @@ class AreaConocimientoController extends Controller
         $areaConocimiento->activo = $request->activo?true:false;
         $areaConocimiento->save();
 
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha actualizado una Area de Conocimiento con id: " .$areaConocimiento ->id ;
+        $usuario_dato->save();
+
         return redirect()->route('areas_conocimientos.mostrar',$areaConocimiento->id);
     }
 
@@ -95,6 +109,11 @@ class AreaConocimientoController extends Controller
         $areaConocimiento = AreaConocimiento::find($id);
         $areaConocimiento->eliminado=true;
         $areaConocimiento->save();
+
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha eliminado una Area de Conocimiento con id: " .$areaConocimiento ->id ;
+        $usuario_dato->save();
+
         return redirect()->route('areas_conocimientos.index');
     }
 }

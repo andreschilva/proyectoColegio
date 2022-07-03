@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Aula;
 use App\Libs\Funciones;
+use App\Models\Bitacora;
 use Illuminate\Http\Request;
 
 class AulaController extends Controller
@@ -69,6 +70,10 @@ class AulaController extends Controller
         $aula->activo = $request->activo?true:false;
         $aula->save();
 
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha insertado una nueva Aula con id: " .$aula ->id ;
+        $usuario_dato->save();
+
         return redirect()->route('aulas.mostrar',$aula->id);
     }
 
@@ -91,6 +96,10 @@ class AulaController extends Controller
         $aula->activo = $request->activo?true:false;
         $aula->save();
 
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha actualizado una Aula con id: " .$aula ->id ;
+        $usuario_dato->save();
+
         return redirect()->route('aulas.mostrar',$aula->id);
     }
 
@@ -99,6 +108,11 @@ class AulaController extends Controller
         $aula = Aula::find($id);
         $aula->eliminado=true;
         $aula->save();
+
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha eliminado un Aula con id: " .$aula ->id ;
+        $usuario_dato->save();
+
         return redirect()->route('aulas.index');
     }
 }

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Turno;
 use App\Libs\Funciones;
+use App\Models\Bitacora;
 use Illuminate\Http\Request;
 
 class TurnoController extends Controller
@@ -71,6 +72,10 @@ class TurnoController extends Controller
         $turno->activo = $request->activo?true:false;
         $turno->save();
 
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha insertado un nuevi Turno con id: " .$turno ->id ;
+        $usuario_dato->save();
+
         return redirect()->route('turnos.mostrar',$turno->id);
     }
 
@@ -94,6 +99,10 @@ class TurnoController extends Controller
         $turno->hora_fin = $request->hora_fin;
         $turno->activo = $request->activo?true:false;
         $turno->save();
+
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha actualizado un Turno con id: " .$turno ->id ;
+        $usuario_dato->save();
 
         return redirect()->route('turnos.mostrar',$turno->id);
     }

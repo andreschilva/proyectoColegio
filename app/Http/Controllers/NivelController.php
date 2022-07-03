@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Nivel;
 use App\Libs\Funciones;
+use App\Models\Bitacora;
 use Illuminate\Http\Request;
 
 class NivelController extends Controller
@@ -70,6 +71,10 @@ class NivelController extends Controller
         $nivel->activo = $request->activo?true:false;
         $nivel->save();
 
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha insertado un nuevo Nivel con id: " .$nivel ->id ;
+        $usuario_dato->save();
+
         return redirect()->route('niveles.mostrar',$nivel->id);
     }
 
@@ -92,6 +97,10 @@ class NivelController extends Controller
         $nivel->activo = $request->activo?true:false;
         $nivel->save();
 
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha actualizado un Nivel con id: " .$nivel ->id ;
+        $usuario_dato->save();
+
         return redirect()->route('niveles.mostrar',$nivel->id);
     }
 
@@ -100,6 +109,11 @@ class NivelController extends Controller
         $nivel = Nivel::find($id);
         $nivel->eliminado=true;
         $nivel->save();
+
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha eliminado un Nivel con id: " .$nivel ->id ;
+        $usuario_dato->save();
+
         return redirect()->route('niveles.index');
     }
 }

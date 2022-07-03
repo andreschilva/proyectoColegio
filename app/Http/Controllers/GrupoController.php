@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Grupo;
-use App\Models\Gestion;
-use App\Models\Turno;
-use App\Models\Grado;
-use App\Models\Aula;
-use App\Libs\Funciones;
 use Carbon\Carbon;
+use App\Models\Aula;
+use App\Models\Grado;
+use App\Models\Grupo;
+use App\Models\Turno;
+use App\Libs\Funciones;
+use App\Models\Gestion;
+use App\Models\Bitacora;
 use Illuminate\Http\Request;
 
 
@@ -97,6 +98,11 @@ class GrupoController extends Controller
 
         $grupo->activo = $request->activo?true:false;
         $grupo->save();
+
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha insertado un nuevo Grupo con id: " .$grupo ->id ;
+        $usuario_dato->save();
+        
         return redirect()->route('grupos.mostrar',$grupo->id);
     }
 
@@ -145,6 +151,11 @@ class GrupoController extends Controller
 
         $grupo->activo = $request->activo?true:false;
         $grupo->save();
+
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha actualziado un Grupo con id: " .$grupo ->id ;
+        $usuario_dato->save();
+
         return redirect()->route('grupos.mostrar',$grupo->id);
     }
 
@@ -153,6 +164,11 @@ class GrupoController extends Controller
         $grupo = Grupo::find($id);
         $grupo->eliminado=true;
         $grupo->save();
+
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha eliminado un Grupo con id: " .$grupo ->id ;
+        $usuario_dato->save();
+
         return redirect()->route('grupos.index');
     }
 }

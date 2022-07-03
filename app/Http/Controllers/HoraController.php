@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Hora;
 use App\Libs\Funciones;
+use App\Models\Bitacora;
 use Illuminate\Http\Request;
 
 class HoraController extends Controller
@@ -69,6 +70,10 @@ class HoraController extends Controller
         $hora->activo = $request->activo?true:false;
         $hora->save();
 
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha insertado una nueva Hora con id: " .$hora ->id ;
+        $usuario_dato->save();
+
         return redirect()->route('horas.mostrar',$hora->id);
     }
 
@@ -92,6 +97,10 @@ class HoraController extends Controller
         $hora->activo = $request->activo?true:false;
         $hora->save();
 
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha actualizado una  Hora con id: " .$hora ->id ;
+        $usuario_dato->save();
+
         return redirect()->route('horas.mostrar',$hora->id);
     }
 
@@ -100,6 +109,11 @@ class HoraController extends Controller
         $hora = Hora::find($id);
         $hora->eliminado=true;
         $hora->save();
+
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha eliminado una Hora con id: " .$hora ->id ;
+        $usuario_dato->save();
+
         return redirect()->route('horas.index');
     }
 }

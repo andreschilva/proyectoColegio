@@ -1,10 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Periodo;
-use App\Models\Gestion;
-use App\Libs\Funciones;
 use Carbon\Carbon;
+use App\Libs\Funciones;
+use App\Models\Gestion;
+use App\Models\Periodo;
+use App\Models\Bitacora;
 use Illuminate\Http\Request;
 
 class PeriodoController extends Controller
@@ -77,6 +78,11 @@ class PeriodoController extends Controller
         $periodo->activo = $request->activo?true:false;
         $periodo->save();
 
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha insertado un nuevo Periodo con id: " .$periodo ->id ;
+        $usuario_dato->save();
+
+
         return redirect()->route('periodos.mostrar',$periodo->id);
     }
 
@@ -106,6 +112,10 @@ class PeriodoController extends Controller
         $periodo->activo = $request->activo?true:false;
         $periodo->save();
 
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha actualizado un Periodo con id: " .$periodo ->id ;
+        $usuario_dato->save();
+
         return redirect()->route('periodos.mostrar',$periodo->id);
     }
 
@@ -114,6 +124,11 @@ class PeriodoController extends Controller
         $periodo = Periodo::find($id);
         $periodo->eliminado=true;
         $periodo->save();
+
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha eliminado un Periodo con id: " .$periodo ->id ;
+        $usuario_dato->save();
+
         return redirect()->route('periodos.index');
     }
 }

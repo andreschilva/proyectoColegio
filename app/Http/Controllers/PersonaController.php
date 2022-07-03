@@ -136,7 +136,7 @@ class PersonaController extends Controller
         $persona->save();
 
         $usuario_dato = new Bitacora();
-        $usuario_dato ->descripcion = "Se ha actualizado una nueva Persona con id: " .$persona->id ;
+        $usuario_dato ->descripcion = "Se ha actualizado una Persona con id: " .$persona->id ;
         $usuario_dato->save();
 
         return redirect()->route('personas.mostrar',$persona->id);
@@ -149,7 +149,7 @@ class PersonaController extends Controller
         $persona->save();
 
         $usuario_dato = new Bitacora();
-        $usuario_dato ->descripcion = "Se ha eliminado una nueva Persona con id: " .$persona->id ;
+        $usuario_dato ->descripcion = "Se ha eliminado una Persona con id: " .$persona->id ;
         $usuario_dato->save();
 
 

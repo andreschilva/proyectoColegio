@@ -1,13 +1,14 @@
 <?php
 
 namespace App\Http\Controllers;
+use Carbon\Carbon;
+use App\Models\Nota;
+use App\Models\Grupo;
+use App\Libs\Funciones;
+use App\Models\Bitacora;
 use App\Models\Matricula;
 use App\Models\Estudiante;
-use App\Models\Grupo;
-use App\Models\Nota;
 use App\Models\Mensualidad;
-use App\Libs\Funciones;
-use Carbon\Carbon;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -93,6 +94,11 @@ class MatriculaController extends Controller
         $matricula->save();
         $mensualidad = new Mensualidad();
         $mensualidad->GenerarMensualidades($matricula->id);
+
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha insertado una nueva Matricula con id: " .$matricula->id ;
+        $usuario_dato->save();
+
         return redirect()->route('matriculas.mostrar',$matricula->id);
     }
 
@@ -129,6 +135,11 @@ class MatriculaController extends Controller
         $matricula = Matricula::find($id);
         $matricula->anulado=true;
         $matricula->save();
+
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha eliminado una Matricula con id: " .$matricula->id ;
+        $usuario_dato->save();
+
         return redirect()->route('matriculas.index');
     }
     

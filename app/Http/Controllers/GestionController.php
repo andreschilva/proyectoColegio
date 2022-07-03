@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
-use App\Models\Gestion;
-use App\Libs\Funciones;
 use Carbon\Carbon;
+use App\Libs\Funciones;
+use App\Models\Gestion;
+use App\Models\Bitacora;
 use Illuminate\Http\Request;
 
 class GestionController extends Controller
@@ -76,6 +77,10 @@ class GestionController extends Controller
         $gestion->activo = $request->activo?true:false;
         $gestion->save();
 
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha insertado una nueva Gestion con id: " .$gestion ->id ;
+        $usuario_dato->save();
+
         return redirect()->route('gestiones.mostrar',$gestion->id);
     }
 
@@ -104,6 +109,11 @@ class GestionController extends Controller
         $gestion->activo = $request->activo?true:false;
         $gestion->save();
 
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha actualizado una Gestion con id: " .$gestion ->id ;
+        $usuario_dato->save();
+
+
         return redirect()->route('gestiones.mostrar',$gestion->id);
     }
 
@@ -112,6 +122,11 @@ class GestionController extends Controller
         $gestion = Gestion::find($id);
         $gestion->eliminado=true;
         $gestion->save();
+
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha eliminado una Gestion con id: " .$gestion ->id ;
+        $usuario_dato->save();
+
         return redirect()->route('gestiones.index');
     }
 }

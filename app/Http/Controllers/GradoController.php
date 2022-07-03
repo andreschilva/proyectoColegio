@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\Grado;
 use App\Models\Nivel;
 use App\Libs\Funciones;
+use App\Models\Bitacora;
 use Illuminate\Http\Request;
 
 class GradoController extends Controller
@@ -70,6 +71,10 @@ class GradoController extends Controller
         $grado->activo = $request->activo?true:false;
         $grado->save();
 
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha insertado un nuevo Grado con id: " .$grado->id ;
+        $usuario_dato->save();
+
         return redirect()->route('grados.mostrar',$grado->id);
     }
 
@@ -104,6 +109,11 @@ class GradoController extends Controller
         $grado->activo = $request->activo?true:false;
         $grado->save();
 
+        
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha actualizado un Grado con id: " .$grado->id ;
+        $usuario_dato->save();
+
         return redirect()->route('grados.mostrar',$grado->id);
     }
 
@@ -112,6 +122,12 @@ class GradoController extends Controller
         $grado = Grado::find($id);
         $grado->eliminado=true;
         $grado->save();
+
+        
+        $usuario_dato = new Bitacora();
+        $usuario_dato ->descripcion = "Se ha eliminado un Grado con id: " .$grado->id ;
+        $usuario_dato->save();
+
         return redirect()->route('grados.index');
     }    
 }
