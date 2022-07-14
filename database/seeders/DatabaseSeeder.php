@@ -36,5 +36,9 @@ class DatabaseSeeder extends Seeder
         $this->call(MateriasTableSeeder::class);
         $this->call(GruposMateriasTableSeeder::class);
         $this->call(MatriculasTableSeeder::class);
+        $this->call(ParametrosTableSeeder::class);
+        $this->call(HorasTableSeeder::class);
+        $this->call(PeriodosTableSeeder::class);
+        $this->call(NotasTableSeeder::class);
     }
 }

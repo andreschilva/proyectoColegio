@@ -48,6 +48,16 @@ class ModulosTableSeeder extends Seeder
         $modulo->activo = 1;
         $modulo->eliminado = 0;
         $modulo->save();
+
+        $modulo = new Modulo();
+        $modulo->id = 4;
+        $modulo->titulo ='Informes';
+        $modulo->codigo = 'informes';
+        $modulo->icono = 'fa-bar-chart-o';
+        $modulo->orden = 4;
+        $modulo->activo = 1;
+        $modulo->eliminado = 0;
+        $modulo->save();
        
         
     }

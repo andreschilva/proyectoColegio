@@ -63,12 +63,12 @@ class Matricula extends Model
         $pagina=0;
         $totPaginas=0;
 
-        if($buscar){
+        if(!$buscar){
 
             $sqlSel = "select valor as campo from parametros p where p.nombre ='gestion_matricula'";
             $parametro = DB::select($sqlSel);
             $gestion_matricula = $parametro[0]->campo;
-
+            
             $filtro="";
             if ($buscar!="") {
                 $filtro=" and (concat(pe.primer_apellido,' ',coalesce(pe.segundo_apellido,''),' ',pe.nombres) like '%$buscar%' or pe.ci like '%$buscar%') ";

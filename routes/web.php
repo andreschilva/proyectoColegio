@@ -46,19 +46,25 @@ include_once 'webroutes/GestionesRoutes.php';
 include_once 'webroutes/PersonasRoutes.php';
 include_once 'webroutes/AreasConocimientosRoutes.php';
 include_once 'webroutes/NivelesRoutes.php';
+include_once 'webroutes/HorasRoutes.php';
 
 
 include_once 'webroutes/MateriasRoutes.php';
 include_once 'webroutes/GradosRoutes.php';
-
+include_once 'webroutes/PeriodosRoutes.php';
 include_once 'webroutes/PerfilesRoutes.php';
 include_once 'webroutes/UsuariosRoutes.php';
 include_once 'webroutes/GruposRoutes.php';
 include_once 'webroutes/MatriculasRoutes.php';
-
+include_once 'webroutes/MensualidadesRoutes.php';
 include_once 'webroutes/EstudiantesRoutes.php';
 include_once 'webroutes/DocentesRoutes.php';
 include_once 'webroutes/FuncionalidadesRoutes.php';
+include_once 'webroutes/RepInscritosRoutes.php';
+include_once 'webroutes/RepNotasRoutes.php';
+
+include_once 'webroutes/NotasRoutes.php';
+
 
 include_once 'webroutes/BitacorasRoutes.php';
 
