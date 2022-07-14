@@ -285,7 +285,21 @@ class FuncionalidadesTableSeeder extends Seeder
                 'modulo_id' => 3,
                 'activo' => 1,
                 'eliminado' => 0,
-            ), 
+            ),
+            
+            21 => 
+            array (
+                'id' => 23,
+                'titulo' => 'Bitacoras',
+                'ruta' => 'bitacoras',
+                'accion' => 'index',
+                'orden' => 2,
+                'visible_menu' => 1,
+                'modulo_id' => 1,
+                'activo' => 1,
+                'eliminado' => 0,
+
+            ),
         ));
         
         

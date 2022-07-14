@@ -66,6 +66,9 @@ include_once 'webroutes/RepNotasRoutes.php';
 include_once 'webroutes/NotasRoutes.php';
 
 
+include_once 'webroutes/BitacorasRoutes.php';
+
+
 
 
 
