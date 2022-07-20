@@ -2,7 +2,7 @@
 use App\Http\Controllers\NotaController;
 
 Route::get('notas', [NotaController::class,'index'])->name('notas.index')->middleware('sesion.iniciada');
-Route::get('notas/{id}/index2', [NotaController::class,'index2'])->name('notas.index2')->middleware('sesion.iniciada');
+Route::get('notas/{id}', [NotaController::class,'index2'])->name('notas.index2')->middleware('sesion.iniciada');
 
 Route::get('notas/{id}/index3', [NotaController::class,'index3'])->name('notas.index3')->middleware('sesion.iniciada');
 Route::get('notas/mostrar/{id}/{grupo}/{periodo?}', [NotaController::class,'mostrar'])->name('notas.mostrar')->middleware('sesion.iniciada');
