@@ -43,7 +43,8 @@ class Perfil extends Model
 
     public function obtenerPerfilesActivos()
     {
-        $sql = "select id,nombre from perfiles p where p.eliminado =0 and activo=1 order by nombre asc";
+        $sql = "select id,nombre from perfiles p 
+        where p.eliminado =0 and id != 1 and id != 2 and activo=1 order by nombre asc";
         $perfiles = DB::select($sql);
         return $perfiles;
     }
