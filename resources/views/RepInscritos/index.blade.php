@@ -120,14 +120,14 @@
             
             </tbody>
             <tfoot>
-            <tr>
+            {{-- <tr>
                 <th>Id</th>
                 <th>Estudiante</th>
                 <th>CI</th>
                 <th>Gestion</th>
                 <th>Grado</th>
                 <th>Curso</th>
-            </tr>
+            </tr> --}}
             </tfoot>
             </table>
                 </div>
@@ -147,8 +147,8 @@
             buttons: [
                 { extend: 'copy'},
                 {extend: 'csv'},
-                {extend: 'excel', title: 'ExampleFile'},
-                {extend: 'pdf', title: 'ExampleFile'},
+                {extend: 'excel', title: 'ReporteInscritos'},
+                {extend: 'pdf', title: 'ReporteInscritos'},
 
                 {extend: 'print',
                  customize: function (win){

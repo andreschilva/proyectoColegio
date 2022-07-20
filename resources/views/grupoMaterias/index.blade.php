@@ -4,7 +4,7 @@
 @section('content')
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-12">
-        <h2>{{$parControl['titulo']}}</h2>
+        <h2> Grupo: {{$nombreGrupo}}</h2>
     </div>
 </div>
 <div class="wrapper wrapper-content animated fadeInRight">
@@ -12,11 +12,11 @@
         <div class="col-lg-12">
             <div class="ibox ">
                 <div class="ibox-title">
-                    <a class="btn btn-primary" href="{{route('grupos.agregar')}}">Agregar</a>
+                    <a class="btn btn-primary" href="{{route('grupos.index')}}">Atras</a>
                     <div class="ibox-tools"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></div>
                 </div>
                 <div class="ibox-content">
-                    <form name="formBuscar" action="{{route("grupos.index")}}" method="get">
+                    <form name="formBuscar" action="{{route("grupoMaterias.index",$idGrupo)}}" method="get">
                         <div class="row">
                             <div class="col-sm-3 m-b-xs">
                                 <div class="input-group">
@@ -33,41 +33,30 @@
                         <thead>
                             <tr>
                                 <th>Id</th>
-                                <th>Nombre</th>
-                                <th>Codigo</th>
-                                <th>Cupos</th>
-                                <th>Gestion</th>
-                                <th>Turno</th>
-                                <th>Grado</th>
-                                <th>Aula</th>
+                                <th>Docente</th>
+                                <th>Materia</th>
                                 <th>Activo</th> 
                                 <th>Creado</th>
                                 <th>&nbsp;</th>
-                                <th>GrupoMateria;</th>
                             </tr>
                         </thead>
                         <tbody>
-                            @foreach($grupos as $grupo)
+                            @foreach($gruposMaterias as $gruposMateria)
                                 <tr>
-                                    <td>{{$grupo->id}}</td>
-                                    <td>{{$grupo->nombre}}</td>                                    
-                                    <td>{{$grupo->codigo}}</td>
-                                    <td>{{($grupo->cupos)}}</td>
-                                    <td>{{($grupo->gestion)}}</td>
-                                    <td>{{($grupo->turno)}}</td>
-                                    <td>{{($grupo->grado)}}</td>
-                                    <td>{{($grupo->aula)}}</td>
+                                    <td>{{$gruposMateria->id}}</td>
+                                    <td>{{$gruposMateria->nombreDocente}}</td>                                    
+                                    <td>{{$gruposMateria->nombreMateria}}</td>
                                     <td>
-                                        @if ($grupo->activo) 
+                                        @if ($gruposMateria->activo) 
                                             <span class="label label-primary">SI</span> 
                                         @else 
                                             <span class="label label-warning">NO</span> 
                                         @endif
                                     </td>
-                                    <td>{{fecha_latina($grupo->created_at) }}</td>
-                                    <td data-texto="{{$grupo->nombre}}">
+                                    <td>{{fecha_latina($gruposMateria->created_at) }}</td>
+                                    <td >
                                         
-                                        @if ($permisos['Permiso_mostrar'] == 1)
+                                       {{--  @if ($permisos['Permiso_mostrar'] == 1)
                                             <a href="{{route('grupos.mostrar',$grupo->id)}}" title="Mostrar"><img width="17px" src="{{asset('img/iconos/mostrar.png')}}" alt="Mostrar"></a>
                                         @endif
                                         @if ($permisos['Permiso_modificar'] == 1)
@@ -75,12 +64,10 @@
                                         @endif
                                         @if ($permisos['Permiso_Eliminar'] == 1)
                                             <a data-grupo="{{route('grupos.eliminar',$grupo->id)}}" class="btn-eliminar" title="Eliminar"><img width="17px" src="{{asset('img/iconos/eliminar.png')}}" alt="Eliminar"></a>
-                                        @endif 
-                                    </td>
-                                    <td>
-                                        <a href="{{route('grupoMaterias.agregar',$grupo->id)}}" title="agregar"> <img width="17px" src="{{asset('img/iconos/agregar2.png')}}" alt="agregar">  </a>
-                                        <a href="{{route('grupoMaterias.index',$grupo->id)}}" title="Mostrar"><img width="17px" src="{{asset('img/iconos/mostrar.png')}}" alt="Mostrar"></a>
-
+                                        @endif --}}
+                                        
+                                        
+                                        
                                     </td>
                                 </tr>
                             @endforeach

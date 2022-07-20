@@ -1,7 +1,7 @@
 <?php
 use App\Http\Controllers\MensualidadController;
-/* Route::get('mensualidades/validar-notas', [MensualidadController::class,'validarNotas'])->name('mensualidades.validarNotas')->middleware('sesion.iniciada');
-Route::get('mensualidades/estudiantes-activos', [MensualidadController::class,'estudiantesActivos'])->name('mensualidades.estudiantesActivos')->middleware('sesion.iniciada'); */
+Route::get('mensualidades/validar-notas', [MensualidadController::class,'validarNotas'])->name('mensualidades.validarNotas')->middleware('sesion.iniciada');
+Route::get('mensualidades/estudiantes-activos', [MensualidadController::class,'estudiantesActivos'])->name('mensualidades.estudiantesActivos')->middleware('sesion.iniciada');
 
 Route::get('mensualidades', [MensualidadController::class,'index'])->name('mensualidades.index')->middleware('sesion.iniciada');
 Route::get('mensualidades/listado/{matricula_id}', [MensualidadController::class,'mensualidades'])->name('mensualidades.listado')->middleware('sesion.iniciada');

@@ -67,6 +67,7 @@ include_once 'webroutes/NotasRoutes.php';
 
 
 include_once 'webroutes/BitacorasRoutes.php';
+include_once 'webroutes/GrupoMateriasRoutes.php';
 
 
 

@@ -4,7 +4,7 @@
 @section('content')
 <div class="row wrapper border-bottom white-bg page-heading">
     <div class="col-lg-12">
-        <h2>Gestion {{$gestiones->anio}}</h2>
+        <h2>Cursos Gestion {{$gestiones->anio}}</h2>
     </div>
 </div>
 <div class="wrapper wrapper-content animated fadeInRight">
@@ -36,7 +36,7 @@
 
                                     <td data-texto="{{$grupo->nombre}}">
 
-                                            <a href="{{route('notas.index3',$grupo->id)}}" title="Ver Notas"><img width="17px" src="{{asset('img/iconos/mostrar.png')}}"  alt="Mostrar">ver</a>   
+                                            <a href="{{route('notas.index3',['id' => $grupo->id ,'idgestion'=>$gestiones->id])}}" title="Ver Notas"><img width="17px" src="{{asset('img/iconos/mostrar.png')}}"  alt="Mostrar">ver</a>   
      
                                     </td>
                                 </tr>

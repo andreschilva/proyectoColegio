@@ -9,7 +9,7 @@ use Illuminate\Support\Facades\DB;
 class Nota extends Model
 {
     use HasFactory;
-    protected $table="niveles";
+    protected $table="notas";
 
     function ValidarNotasEstudiante($estudiante_id){
         $sqlSel = "select valor as campo from parametros p where p.nombre ='gestion_notas'";

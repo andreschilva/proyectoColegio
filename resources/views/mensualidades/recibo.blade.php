@@ -25,7 +25,7 @@
                                     <strong>COLEGIO TECNICO HUMANISTICO DE CONVENIO</strong><BR>
                                     <strong>MATEO KULJIS ILIC</strong><BR>
                                     <strong>RECIBO DE PAGO DE MENSUALIDAD</strong><BR>
-                                    <strong>GESTION 2021</strong><BR>
+                                    <strong>GESTION </strong><BR>
                                     <HR>
                                 </div>
                                 
@@ -47,7 +47,7 @@
                             <div class="form-group row">
                                 <div class="col-sm-4 col-sm-offset-2">
                                     <button class="btn btn-success " type="button" id="btn-imprimir">Imprimir</button>
-                                    <button class="btn btn-info " type="button" onclick="location.href='{{route('mensualidades.listado',$pago->matricula_id)}}'">Volver</button>
+                                    
                                     
                                 </div>
                             </div>

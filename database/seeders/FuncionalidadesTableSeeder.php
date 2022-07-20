@@ -300,6 +300,20 @@ class FuncionalidadesTableSeeder extends Seeder
                 'eliminado' => 0,
 
             ),
+
+            22 => 
+            array (
+                'id' => 24,
+                'titulo' => 'Notas',
+                'ruta' => 'notas',
+                'accion' => 'index',
+                'orden' => 2,
+                'visible_menu' => 1,
+                'modulo_id' => 2,
+                'activo' => 1,
+                'eliminado' => 0,
+
+            ),
         ));
         
         
