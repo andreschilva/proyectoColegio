@@ -56,7 +56,7 @@ class Grupo extends Model
     {
         $sql = "select id,nombre
                 from grupos gr
-                where gr.eliminado =0 and gr.activo = 1 order by nombre asc";
+                where gr.eliminado =0 and gr.gestion_id = 2 and  gr.activo = 1 order by nombre asc";
         $grupos = DB::select($sql);
         return $grupos;
     }
