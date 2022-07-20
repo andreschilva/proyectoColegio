@@ -13,7 +13,7 @@
             <div class="col-lg-12">
                 <div class="ibox ">
                     <div class="ibox-title">
-                        <a class="btn btn-primary" href="{{route('notas.index3',$grupo->id)}}">Listado</a>
+                        <a class="btn btn-primary" href="{{route('notas.estudiantes',$grupo->id)}}">Listado</a>
                         <div class="ibox-tools"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></div>
                     </div>
                     <div class="ibox-content">
@@ -52,7 +52,7 @@
                             <div class="form-group row">
                                 <div class="col-sm-4 col-sm-offset-2">
                                     <button class="btn btn-success " type="submit">Guardar</button>
-                                    <button class="btn btn-danger " type="button" onclick="location.href='{{route('notas.index3',$grupo->id)}}'">Cancelar</button>
+                                    <button class="btn btn-danger " type="button" onclick="location.href='{{route('notas.estudiantes',$grupo->id)}}'">Cancelar</button>
                                     
                                 </div>
                             </div>

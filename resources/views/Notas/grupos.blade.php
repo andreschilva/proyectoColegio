@@ -36,7 +36,7 @@
 
                                     <td data-texto="{{$grupo->nombre}}">
 
-                                            <a href="{{route('notas.index3',['id' => $grupo->id ,'idgestion'=>$gestiones->id])}}" title="Ver Notas"><img width="17px" src="{{asset('img/iconos/mostrar.png')}}"  alt="Mostrar">ver</a>   
+                                            <a href="{{route('notas.estudiantes',['id' => $grupo->id ,'idgestion'=>$gestiones->id])}}" title="Ver Notas"><img width="17px" src="{{asset('img/iconos/mostrar.png')}}"  alt="Mostrar">ver</a>   
      
                                     </td>
                                 </tr>

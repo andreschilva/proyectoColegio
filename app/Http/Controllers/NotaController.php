@@ -39,17 +39,17 @@ class NotaController extends Controller
         return view('Notas.index',$mergeData);
     }
 
-    public function index2($id)
+    public function grupos($id)
     {
         
         $grupos = Grupo::where('gestion_id' , $id)->get();
         $gestiones = Gestion::find( $id);
         
         $mergeData = ['grupos'=>$grupos,'gestiones'=>$gestiones,'parControl'=>$this->parControl];
-        return view('notas.index2',$mergeData);
+        return view('notas.grupos',$mergeData);
     }
 
-    public function index3($id)
+    public function estudiantes($id)
     {
         
         $sql = "select pe.id, concat(pe.primer_apellido,' ',coalesce(pe.segundo_apellido,''),' ',pe.nombres) as nombre, es.codigo_rude from estudiantes es 
@@ -62,7 +62,7 @@ class NotaController extends Controller
         $estudiantes = DB::select($sql);
         $grupo = Grupo::find($id);
         $mergeData = ['grupo'=>$grupo,'estudiantes'=>$estudiantes,'parControl'=>$this->parControl];
-        return view('notas.index3',$mergeData);
+        return view('notas.estudiantes',$mergeData);
     }
 
     public function mostrar(  $id,Grupo $grupo, $periodo)

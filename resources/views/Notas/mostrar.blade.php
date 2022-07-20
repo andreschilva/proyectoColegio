@@ -10,7 +10,7 @@
         <div class="col-lg-12">
             <div class="ibox ">
                 <div class="ibox-title">
-                    <a class="btn btn-primary" href="{{route('notas.index3',$grupo->id)}}">Listado</a>
+                    <a class="btn btn-primary" href="{{route('notas.estudiantes',$grupo->id)}}">Listado</a>
                     <div class="ibox-tools"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></div>
                 </div>
                 <div class="ibox-content" id="print-area">
@@ -62,7 +62,7 @@
                 </div>
                     <div class="col-sm-4 col-sm-offset-2">
                         <button class="btn btn-success " type="button" id="btn-imprimir">Imprimir</button>
-                        <button class="btn btn-info " type="button" onclick="location.href='{{route('notas.index3',$grupo->id)}}'">Volver</button>
+                        <button class="btn btn-info " type="button" onclick="location.href='{{route('notas.estudiantes',$grupo->id)}}'">Volver</button>
                     </div>
             </div>
         </div>

@@ -12,7 +12,7 @@
         <div class="col-lg-12">
             <div class="ibox ">
                 <div class="ibox-title">
-                    <a class="btn btn-primary" href="{{route('notas.index2',$grupo->gestion_id)}}">Atras</a>
+                    <a class="btn btn-primary" href="{{route('notas.grupos',$grupo->gestion_id)}}">Atras</a>
                     <div class="ibox-tools"><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></div>
                 </div>
                 <div class="ibox-content">

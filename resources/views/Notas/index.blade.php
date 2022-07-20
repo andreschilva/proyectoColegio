@@ -31,7 +31,7 @@
 
                                     <td data-texto="{{$gestion->anio}}">
 
-                                            <a href="{{route('notas.index2',$gestion->id)}}" title="Elegir"><img width="17px" src="{{asset('img/iconos/mostrar.png')}}" alt="Mostrar"></a>   
+                                            <a href="{{route('notas.grupos',$gestion->id)}}" title="Elegir"><img width="17px" src="{{asset('img/iconos/mostrar.png')}}" alt="Mostrar"></a>   
 
     
                                         
